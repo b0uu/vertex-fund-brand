@@ -11,3 +11,8 @@ vf-gold          #D6A72A  rgb(214, 167, 42)  gold on DARK backgrounds — 8.4:1 
 vf-gold-deep     #A98018  rgb(169, 128, 24)  gold on LIGHT backgrounds — 3.5:1: ≥24px text or graphics only
 vf-red           #B8000F  rgb(184, 0, 15)  red on LIGHT — 6.6:1 on paper
 vf-red-bright    #E8695C  rgb(232, 105, 92)  red on DARK
+vf-deck-ink      #13120E  rgb(19, 18, 14)  titles, lead-ins
+vf-deck-body     #45403B  rgb(69, 64, 59)  body under lead-ins
+vf-deck-accent   #A7221D  rgb(167, 34, 29)  oxblood: roles, bullets, the one key stat
+vf-deck-muted    #888888  rgb(136, 136, 136)  secondary callout
+vf-deck-rule     #E1E1DF  rgb(225, 225, 223)  1pt header hairline

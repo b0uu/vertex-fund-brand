@@ -1,71 +1,79 @@
 # Slide decks & data visualization
 
-Decks are built in **Google Slides** (16:9, 960×540pt). Everything below works with Slides' native tools.
-All three fonts are available via *Fonts → More fonts*.
+## 0. The reference: our Event Slideshow
 
-## 1. The slide master (every deck)
+**`assets/examples/event-slideshow/` is the deck reference.** It holds all 15 slides of "Vertex Fund @ University of Maryland: Event Slideshow", the deck we presented at the Nov 18, 2026 interest meeting, exported straight from Google Slides. Look at the slides before building any deck, and match them.
+
+This deck **intentionally differs from the general theme**, and for decks the deck wins:
+
+| | Event Slideshow (use this in decks) | General theme (social, documents) |
+|---|---|---|
+| Font | **Georgia** throughout | EB Garamond |
+| Accent | **Oxblood `#A7221D`** for role titles, bullets and the one key stat | Gold identity, red signal |
+| Header subline | "UNIVERSITY OF MARYLAND" in capitals | Either case |
+| Centering | Centered titles on single-message slides (Check-in, Questions, Thank you) | Left-aligned |
+
+Don't "correct" decks toward the general theme. Only change the deck style if the exec board decides to.
+
+## 1. The slide master (measured from the reference)
+
+Decks are built in **Google Slides** (16:9, 960×540pt).
 
 | Element | Spec |
 |---|---|
-| Background | `#FAFAF8` paper (light, the default). Cover and section dividers may use `#14120E` ink |
-| Header | Lockup (on-light) top-left at (54, 24)pt, 166pt wide. 1pt `rgba(20,18,14,.10)` hairline full content width at y = 63pt |
-| Title | EB Garamond 400, 36pt, `#14120E`, top-left at y ≈ 84pt, ≤2 lines |
-| Body area | 54pt left/right margins, from y ≈ 150pt down to 486pt |
-| Footer | Source line bottom-left: EB Garamond italic 11pt, `#6E685F`. Slide number bottom-right: EB Garamond 11pt |
-| Corners / shadows | Square. None |
+| Background | `#FAFAF8` on every slide |
+| Header | Logo image (mark + "Vertex Fund" + "UNIVERSITY OF MARYLAND") at (54, 24)pt, 166×30pt; 1pt `#E1E1DF` hairline at y = 63pt across the 852pt content width |
+| Margins | 54pt left and right |
+| Title | Georgia 400, 36pt, `#13120E`, left-aligned below the header |
+| Corners / shadows | Square, no shadows, except the two QR cards on the "Stay connected" slide |
 
-**Type scale (pt).** Don't let autofit invent sizes. Turn autofit off and use only these:
+**Type (pt):**
 
 | Role | Size | Style |
 |---|---|---|
-| Cover title | 60 | EB Garamond 400 |
-| Section title | 48 | EB Garamond 400 |
-| Slide title | 36 | EB Garamond 400 |
-| Lead-in | 20 | EB Garamond 600, `#14120E` |
-| Body | 17 (min 16) | EB Garamond 400, `#46403A`, line spacing 1.15–1.3 |
-| Small / caption | 13 | EB Garamond 400, `#6E685F` |
-| Label / eyebrow | 14 | EB Garamond italic, sentence case, `#6E685F` |
-| Stat | 48 | EB Garamond 400, `#A98018` (gold-deep) or `#14120E`. If Slides shows old-style figures, STIX Two Text |
-| Role under a name | 13 | EB Garamond 400, `#B8000F` red |
+| Opening / section title | 59–64 | Georgia 400, `#13120E` |
+| Quote | 50 | Georgia 400, in curly quotes |
+| Slide title | 36 | Georgia 400, `#13120E` |
+| Lead-in | 19.5 | Georgia **bold**, `#13120E` |
+| Body under a lead-in | 17.5 | Georgia 400, `#45403B` |
+| Team name | 15 | Georgia bold, `#13120E` |
+| Team role | 12.7 | Georgia 400, oxblood `#A7221D` |
+| Secondary callout | 25.5 | Georgia 400, `#888888` (e.g. "Applications open early in the Spring!") |
+| Key stat | 25.5 | Georgia 400, oxblood `#A7221D` (e.g. "Starting AUM >$5,000") |
 
-**Never in decks:** all-caps text (titles, labels, table headers, ratings) or monospace anywhere except inside tables and chart axes.
+Turn off autofit in Slides and stick to these sizes. The reference drifted in a few places (16.25–21.2pt body sizes, `#000000`, `#4B5563` and `#434343` text on two slides); don't copy those.
 
-**Color in decks**
-- **Gold-deep:** stats, the *f*, accent dashes.
-- **Red:** role titles, CTA lines ("Applications open early Spring"), negative numbers, bullet glyphs only.
-- Never put gold-deep or stone text below 24pt.
-- Replace every `#000000`, `#1A1A1A`, `#434343`, `#4B5563` and `#888888` with tokens.
+## 2. Slide types (all from the reference)
 
-## 2. Slide archetypes
+| # | Type | Reference slide | Structure |
+|---|---|---|---|
+| R1 | Opening title | 1 | Big title left-aligned, one-line description in body grey below. No image |
+| R2 | Centered single message | 2, 14, 15 | One centered title (Check-in, Questions?, Thank you); optionally one QR code centered below |
+| R3 | Team grid | 3 | Title, 5×2 portraits (same crop), bold name, oxblood role |
+| R4 | Lead-in list | 4, 8, 12 | Title, stacked {bold lead-in / one body line} pairs; optionally a side column (grey callout + oxblood stat, or a QR code with a bold label) |
+| R5 | Partner | 5 | Title with the partner logo inline to its right; two columns of {bold small heading / body} |
+| R6 | Speaker | 6 | Headshot left with name under it; title, credentials (bold, centered) and company logo right |
+| R7 | Three columns | 7 | Title plus logos at right; three columns of {bold heading / body} |
+| R8 | Two columns | 9 | Left: list with oxblood bullets. Right: lead-in pairs |
+| R9 | Section statement | 10 | Big title (~64pt) left-aligned, one instruction line below |
+| R10 | Quote + prompts | 11 | Centered quote ~50pt; four small prompts scattered below |
+| R11 | Call to action | 13 | Two bulleted steps left; QR cards right (white rounded card, bold label above each code) |
 
-**Approved** layouts come from decks we've presented and are rendered in `templates/deck-master.html`; copy them. **Draft** layouts have no approved reference yet: build them carefully, run Visual QA twice, and tell the user the slide uses a draft layout.
-
-| # | Status | Archetype | Structure | Existing example |
-|---|---|---|---|---|
-| S1 | Approved | **Cover** | Paper. Monogram large at top-right, title 60pt anchored bottom-left, one-line description 17pt, date and place 13pt | Event deck slide 1 |
-| S2 | Draft | **Section divider** | Ink. Italic label "02 · Valuation" in gold, title 48pt | — |
-| S3 | Approved | **Point grid** | Title, then a 2×2 grid of {lead-in 20pt / body 17pt}, each cell topped by a hairline, optional red CTA line at the bottom. ≤25 words per body | "Why did we create Vertex Fund?" |
-| S4 | Approved | **Statement / question** | One sentence at 48pt, optional 13pt sub-prompts in a row underneath | "What is something you enjoy…" |
-| S5 | Draft | **Chart + takeaway** | Action title (the conclusion as a sentence), chart on the left ~60%, 2–3 lead-in notes on the right, source line | — |
-| S6 | Draft | **Stat strip** | Title, 3–4 stats (48pt Garamond) with 13pt captions, optional chart below | "Some numbers, projections, goals" |
-| S7 | Approved | **Roster** | Title, a grid of 5 per row 3:4 portraits (same crop, same edit), name 15pt 600, role 13pt red, major and year 11pt `#6E685F` | "Our Team" |
-| S8 | Approved | **Partner** | Partner logo (actual colors allowed inside the logo only), 2 lead-in pairs, optional speaker headshot | "Corporate Partnership" |
-| S9 | Draft | **Table** | Comps or financials. Mono numbers right-aligned, hairline rows, header row in italic sentence case, no fills except a paper-2 highlight on the subject company | — |
-| S10 | Approved | **CTA / close** | 1–2 lead-in steps on the left, QR code (black on paper, 216pt = 3in) on the right with the URL beneath it | "Stay Connected" |
+**Draft slide types (no approved reference yet).** For a chart, a stat strip, a table or a section divider, build it carefully in the reference's style (Georgia, oxblood, header) and run Visual QA twice. Tell the user the slide uses a draft layout.
 
 ## 3. Equity pitch structure (stock pitches to the fund)
 
 No real pitch exists yet, so this is v1. Revise after the first one.
 
-1. **Cover (S1):** company, ticker, exchange, presenting analysts, sector team, date.
-2. **The call (S6), always slide 2:** rating (Buy / Hold / Sell, written in sentence case; Sell in red), current price, price target, implied upside or downside, time horizon, proposed position size (% of AUM).
-3. **Business snapshot (S3 or S9):** what they sell, to whom, how they make money, 3–4 key metrics.
-4. **Thesis overview (S3):** exactly 3 pillars, each one sentence.
-5. **Pillars 1–3 (S5), one slide each:** an action title stating the claim, evidence chart, 2–3 notes.
-6. **Valuation (S5 + S9):** DCF summary (WACC, terminal growth, implied value), comps table, football field.
-7. **Catalysts (S3 or timeline):** dated events that close the gap to the target.
-8. **Risks and mitigants (S9):** the risk, its likelihood and impact, the mitigant, and what would change our mind.
-9. **Recommendation (S6):** repeat the call, entry/exit criteria, position sizing.
+1. **Cover (R1):** company, ticker, exchange, presenting analysts, sector team, date.
+2. **The call (draft stat strip), always slide 2:** rating (Buy / Hold / Sell, written in sentence case; Sell in red), current price, price target, implied upside or downside, time horizon, proposed position size (% of AUM).
+3. **Business snapshot (R4, or a draft table):** what they sell, to whom, how they make money, 3–4 key metrics.
+4. **Thesis overview (R4 or R7):** exactly 3 pillars, each one sentence.
+5. **Pillars 1–3 (draft chart slide), one slide each:** an action title stating the claim, evidence chart, 2–3 notes.
+6. **Valuation (draft chart + table):** DCF summary (WACC, terminal growth, implied value), comps table, football field.
+7. **Catalysts (R4):** dated events that close the gap to the target.
+8. **Risks and mitigants (R4, or a draft table):** the risk, its likelihood and impact, the mitigant, and what would change our mind.
+9. **Recommendation (draft stat strip):** repeat the call, entry/exit criteria, position sizing.
 10. **Appendix:** model detail, sources.
 
 **Rules**
@@ -74,10 +82,12 @@ No real pitch exists yet, so this is v1. Revise after the first one.
 - Every chart and number has a source line with the date.
 - The last line on slide 2 and the closing slide: *For educational purposes only. Not investment advice.*
 
-**Club decks** (events, interest meetings, sponsor pitches) use S1, S3, S4, S6, S7, S8 and S10.
+**Club decks** (events, interest meetings, sponsor pitches) use R1–R11. Copy the reference's order.
 - Interest meeting order: Cover → Check-in → Team → Why we exist → What we do → Partners → Program → Activity → CTA → Questions → Thank you.
 
 ## 4. Data visualization
+
+> **Draft.** No real Vertex chart exists yet, so these rules are untested. In decks, the reference's accent is oxblood, which also reads as "loss" in finance. Ask the user which color marks the subject before building the first real chart.
 
 ### Palette by role, not by rainbow
 

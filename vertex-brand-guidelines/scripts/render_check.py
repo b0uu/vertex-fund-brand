@@ -14,7 +14,7 @@ report that the design was NOT visually checked.
 """
 import argparse, os, shutil, subprocess, sys
 
-ALLOWED_FONTS = ('eb garamond', 'stix two text', 'dm mono', 'ibm plex mono')
+ALLOWED_FONTS = ('eb garamond', 'stix two text', 'dm mono', 'ibm plex mono', 'georgia')  # georgia: slide decks only
 MIN_PX = {'.vf-canvas': 20, '.slide': 14.6}  # 20px on 1080 social canvases; 11pt (14.6px) on slides
 
 CHECK_JS = r"""

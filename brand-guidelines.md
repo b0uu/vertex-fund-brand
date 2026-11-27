@@ -1,6 +1,6 @@
 # Vertex Fund: Brand Guidelines
 
-**v1.5 · November 2026** (v1.5: approved photo-cover post; caps allowed in the wordmark subline. v1.4: slide master + mandatory visual QA. v1.3: social layouts cut to Statement and Grid. v1.2: anti-slop guardrails. v1.1: no all caps; monospace limited to tables and chart axes)
+**v1.6 · November 2026** (v1.6: removed generated reference designs; decks follow the real Event Slideshow. v1.5: approved photo-cover post; caps allowed in the wordmark subline. v1.4: slide master + mandatory visual QA. v1.3: social layouts cut to Statement and Grid. v1.2: anti-slop guardrails. v1.1: no all caps; monospace limited to tables and chart axes)
 Owner: Vertex Fund executive board. Applies to everything public (Instagram, LinkedIn, the website, flyers) and private (decks, pitches, memos, sponsor letters).
 
 > **How this repo fits together**
@@ -106,6 +106,7 @@ Every hex except Ink 3, Paper dim and Red bright comes straight from vertexumd.c
 | Headlines and text | **EB Garamond** | The website's voice: classic, literate, finance-appropriate |
 | Table figures, tickers in tables, chart axes | **DM Mono** | Every digit is the same width, so columns line up. A quiet supporting voice, never the focal point. Already on the team page |
 | *Alternate mono* | *IBM Plex Mono* | Approved substitute if we ever switch. Never mix with DM Mono in one piece |
+| Slide decks only | **Georgia** | Our Event Slideshow is set in Georgia, and decks follow that deck |
 
 All are free Google Fonts and work in Google Slides (*Fonts → More fonts*). Fallbacks: Georgia / Menlo.
 
@@ -142,21 +143,20 @@ All are free Google Fonts and work in Google Slides (*Fonts → More fonts*). Fa
   - No stock trading-floor photos.
 
 ## 6. Layouts (composable, not one-off templates)
-We don't keep a "Thank You post template" or an "Interest Meeting template". We keep a small set of building blocks and combine them. Two are approved today:
+We don't keep a "Thank You post template" or an "Interest Meeting template". We keep a small set of building blocks and combine them. Only what we've actually published counts as approved; today that's one:
 
 | Primitive | What it is | Typical use |
 |---|---|---|
-| **P1 · Statement** | Giant headline at the bottom, details, CTA | Announcements, thank-yous, applications |
-| **P2 · Grid** | Repeating cells (people, partners) | Exec boards, speakers, sponsor thanks |
+| **P1 · Statement** | Giant headline at the bottom, details, CTA. Two variants, both from posts we published (Interest Meeting, Thanks for coming!) | Announcements, thank-yous, applications |
 
 Each works in **light or dark**, and in **portrait, square or story** sizes.
 - Full specs: `references/social-layouts.md`.
 - Slide equivalents: `references/pitch-deck-rubric.md`.
 - Page equivalents: `references/documents.md`.
-- Live references: `templates/ig-post-master.html` (social) and `templates/deck-master.html` (slides: cover, point grid, roster, statement, partner, call to action).
+- References: the posted originals and the real Event Slideshow are in `vertex-brand-guidelines/assets/examples/`. `templates/ig-post-master.html` is starting code for the two approved posts.
 
 ## 7. Decks, pitches and charts (summary)
-- **Decks:** paper background, lockup plus hairline header on every slide, 36pt titles, 10 slide archetypes (6 approved in `deck-master.html`, 4 drafts).
+- **Decks:** follow our Event Slideshow (`assets/examples/event-slideshow/`) exactly: Georgia, oxblood accent, logo and hairline header, 36pt titles, 11 slide types taken from that deck. Decks intentionally differ from the general theme; don't "correct" them.
 - **Stock pitches:**
   - Lead with the call on slide 2 (rating, target, upside).
   - Exactly three thesis pillars.
@@ -204,7 +204,7 @@ Nothing ships unseen. Every design Claude makes with this skill must be rendered
    4. Bump the version above.
 
 ## 12. Known gaps (v1)
-- **Draft layouts:** slides S2 section divider, S5 chart, S6 stat strip, S9 table; documents D2 sidebar, D3 memo. Pitch and memo specs are written from best practice; no real Vertex equity pitch exists yet. Revise after the first one.
-- **The Google Slides master** should be rebuilt to these specs. The current decks use Georgia, oxblood `#A7221D`, and stray blacks.
+- **Draft layouts (no approved reference):** chart, stat strip, table and section-divider slides; all document layouts (letters, memos, one-pagers). Pitch and memo specs are written from best practice; no real Vertex equity pitch exists yet. Revise after the first one.
+- **A Google Slides theme file** could be saved from the Event Slideshow so new decks start from it.
 - **The website** has a short list of conflicts in `site-contradictions.md`. No site changes have been made.
-- **Social layouts removed until redesigned:** a facts/ledger layout ("Applications are open"), a big-numbers layout ("Our first semester") and a sidebar recap layout ("What we covered"). Until then, use P1 or P2.
+- **Social layouts removed until designed with the exec board:** facts/ledger, big numbers, sidebar recap, and people grid (exec board, speakers). Until then, use P1, or propose a new design and get approval.

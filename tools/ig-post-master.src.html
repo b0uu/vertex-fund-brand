@@ -83,15 +83,6 @@ body { background: #DDD8CF; padding: 64px; display: flex; flex-direction: column
 /* =================== Body primitives (choose ONE per post) =================== */
 /* P1 Statement: huge headline anchored bottom-left */
 .p-statement { margin-top: auto; display: flex; flex-direction: column; gap: 30px; }
-/* P2 Grid: N cells (roster, recap items, lineup). 2 or 3 columns. */
-.p-grid { margin-top: 80px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px 24px; text-align: center; }
-.p-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); text-align: left; }
-.headshot { width: 256px; aspect-ratio: 1; border-radius: 50%; margin: 0 auto; background: var(--vf-paper-2);
-  box-shadow: 0 0 0 7px var(--vf-paper), 0 0 0 8.5px var(--vf-gold-deep); overflow: hidden; } /* ring, not a drop shadow */
-.headshot img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
-.p-grid .nm { margin-top: 28px; font-size: 36px; font-weight: 500; color: var(--fg); }
-.p-grid .rl { margin-top: 6px; font-size: 28px; color: var(--signal); }
-.p-grid .mt { margin-top: 4px; font-size: 24px; color: var(--fg-3); font-variant-numeric: lining-nums; }
 /* Partner row (sponsors): italic label over logo, separated by hairline */
 .partners { display: flex; gap: 40px; align-items: flex-start; }
 .partners .logo { margin-top: 14px; width: 150px; height: 110px; border: 2px dashed var(--rule); display: grid; place-items: center; font: italic 400 20px var(--vf-font-serif); color: var(--fg-3); }
@@ -103,7 +94,7 @@ body { background: #DDD8CF; padding: 64px; display: flex; flex-direction: column
 <!-- Monogram: outlined from STIX Two Text (V Medium + f Italic). Paste the <svg class="mono"> block wherever the mark is needed. -->
 
 <!-- ============ P1 · STATEMENT · dark · photo band + watermark ============ -->
-<div class="board-label">P1 · Statement · dark · 1080×1350 — announcements, thank-yous, recaps</div>
+<div class="board-label">P1 · Statement · dark · 1080×1350 — rebuilt from the posted Interest Meeting post (original: assets/examples/posted-interest-meeting.png)</div>
 <section class="vf-canvas vf-dark fmt-portrait">
   <div class="photo-band"><div class="slot">Photo, grayscale (optional)</div><!-- <img src="photo.jpg" alt=""> --></div>
   <svg class="mono watermark" viewBox="__VB__" aria-hidden="true"><path class="v" d="__V__"/><path class="f" d="__F__"/></svg>
@@ -123,7 +114,7 @@ body { background: #DDD8CF; padding: 64px; display: flex; flex-direction: column
 </section>
 
 <!-- ============ P1 · STATEMENT, PHOTO COVER · dark ============ -->
-<div class="board-label">P1 · Statement, photo cover · dark · 1080×1350 — approved reference: the posted interest meeting thank-you (carousel cover)</div>
+<div class="board-label">P1 · Statement, photo cover · dark · 1080×1350 — rebuilt from the posted carousel cover (original: assets/examples/thanks-for-coming-posted.jpg)</div>
 <section class="vf-canvas vf-dark fmt-portrait">
   <div class="photo-cover"><img src="data:image/jpeg;base64,__COVER__" alt="Full room at the Vertex Fund interest meeting"></div>
   <div class="masthead inline">
@@ -133,20 +124,6 @@ body { background: #DDD8CF; padding: 64px; display: flex; flex-direction: column
   <div class="p-statement">
     <h1 class="display">Thanks for coming!</h1>
     <div class="lead" style="font-size: var(--vf-s-body); line-height: 1.3"><div class="g">Stay tuned for future public events &amp; for Spring cohort!</div></div>
-  </div>
-</section>
-
-<!-- ============ P2 · GRID · light · gilt frame ============ -->
-<div class="board-label">P2 · Grid · light + gilt frame · 1080×1350 — roster, speakers, multi-item recap</div>
-<section class="vf-canvas vf-light fmt-portrait frame-gilt" style="justify-content:center">
-  <div class="masthead center">
-    <svg class="mono" viewBox="__VB__" aria-hidden="true"><path class="v" d="__V__"/><path class="f" d="__F__"/></svg>
-  </div>
-  <h1 class="h1" style="text-align:center;margin-top:36px;font-size:88px;white-space:nowrap">New Executives, 2026</h1>
-  <div class="p-grid">
-    <div><div class="headshot"></div><div class="nm">Name Surname</div><div class="rl">Role</div><div class="mt">Finance · ’29</div></div>
-    <div><div class="headshot"></div><div class="nm">Name Surname</div><div class="rl">Role</div><div class="mt">CS and Economics · ’28</div></div>
-    <div><div class="headshot"></div><div class="nm">Name Surname</div><div class="rl">Role</div><div class="mt">Accounting · ’29</div></div>
   </div>
 </section>
 

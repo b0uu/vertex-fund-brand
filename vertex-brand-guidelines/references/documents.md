@@ -1,5 +1,7 @@
 # Documents — memos, recap letters, one-pagers, flyers
 
+> **Draft. No approved document reference exists yet.** These are written specs, not proven designs. Build carefully, run Visual QA, and tell the user the document follows a draft spec. Once a real document is approved, add it to `assets/examples/` and make it the reference.
+
 Page: US Letter (8.5×11in; 816×1056 CSS px). Margins 0.75in. Background `#FAFAF8`, or `#F2EFE9` for print and keepsake pieces.
 Same tokens, same type families. EB Garamond for everything, DM Mono only for figures inside tables, STIX only in the lockup. No all-caps text.
 
@@ -19,7 +21,7 @@ Same tokens, same type families. EB Garamond for everything, DM Mono only for fi
 - **D1 · Classic letter:** masthead, title, date, an opening paragraph, a photo pair (same height), a stat strip (3–4 stats in 24pt EB Garamond lining numerals, gold-deep, with labels), "What we covered" / "What's next" lists, sign-off. For sponsor recaps and thank-you letters.
 - **D2 · Sidebar (Rail + Column)** *(draft, no approved reference)*: a 2in rail (sponsor logo, date, place, attendance as italic label/value pairs), a 1px vertical rule, then the main column. For recaps, one-pagers and event briefs.
 - **D3 · Memo** *(draft, no real memo exists yet)*: a ledger header block, then numbered sections (see §3).
-- **D4 · Flyer / poster:** use the P1 Statement layout scaled to Letter. Margins 0.75in, headline 72–96pt, italic labels 12pt, QR code ≥1.25in with a URL beneath it.
+- **D4 · Flyer / poster:** use the P1 Statement layout scaled to Letter (draft). Margins 0.75in, headline 72–96pt, italic labels 12pt, QR code ≥1.25in with a URL beneath it.
 
 ## 3. Investment memo (stock pitch write-up)
 

@@ -112,6 +112,10 @@ def main():
 
     render(jobs)
 
+    # ---- previews: a straight copy of the approved references (never generated designs) ----
+    PV = os.path.join(OUT, 'previews'); shutil.rmtree(PV, ignore_errors=True)
+    shutil.copytree(os.path.join(ROOT, 'vertex-brand-guidelines/assets/examples'), PV)
+
     # ---- colors: swatch sheet + plain list (parsed from tokens.css) ----
     C = os.path.join(OUT, 'colors'); os.makedirs(C, exist_ok=True)
     toks = re.findall(r'--(vf-[a-z0-9-]+):\s*(#[0-9A-Fa-f]{6});\s*/\*\s*(.*?)\s*\*/', open(TOK).read())
