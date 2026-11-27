@@ -14,8 +14,7 @@ vertex-fund-brand/
 │   ├── make_logos.py            ← regenerates outlined logo SVGs from the STIX font files
 │   ├── build_template.py        ← inlines tokens.css + logo paths into the HTML masters
 │   ├── export_assets.py         ← regenerates brand-assets/ from the master SVGs and tokens
-│   ├── ig-post-master.src.html  ← social template source
-│   └── deck-master.src.html     ← slide template source
+│   └── ig-post-master.src.html  ← social template source (the two approved posts)
 └── vertex-brand-guidelines/     ← the Claude Skill (zip this folder to install)
     ├── SKILL.md                 ← core rules + routing (<200 lines)
     ├── references/
@@ -24,8 +23,7 @@ vertex-fund-brand/
     │   ├── documents.md         ← memos, recap letters, one-pagers, flyers
     │   └── anti-slop.md         ← guardrails against generic AI-looking design and copy
     ├── templates/
-    │   ├── ig-post-master.html  ← approved social layouts, rendered (generated)
-    │   └── deck-master.html     ← approved slide layouts, rendered (generated)
+    │   └── ig-post-master.html  ← the two approved posts as starting code (generated)
     ├── scripts/
     │   └── render_check.py      ← visual QA: screenshots + automated checks (run on every design)
     └── assets/

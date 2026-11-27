@@ -12,7 +12,7 @@ One invariant system + composable layouts. Never design from first principles; a
 | Deliverable | Read | Start from |
 |---|---|---|
 | Instagram / LinkedIn post, story, carousel, banner, avatar | `references/social-layouts.md` | `templates/ig-post-master.html` |
-| Slide deck (club, event, sponsor, or stock pitch) | `references/pitch-deck-rubric.md` | `templates/deck-master.html` |
+| Slide deck (club, event, sponsor, or stock pitch) | `references/pitch-deck-rubric.md` | `assets/examples/event-slideshow/` (the real deck; decks follow it, including Georgia and oxblood) |
 | Memo, recap letter, one-pager, flyer, PDF | `references/documents.md` | — |
 | Any chart or table with numbers | `references/pitch-deck-rubric.md` § Data visualization | — |
 | Logo needed | `assets/logo/` (outlined SVGs — never retype the mark) | — |
@@ -63,9 +63,9 @@ Editorial, quiet, and confident, like a well-set financial broadsheet. Warm pape
 - **Headlines:** short; Title Case for event names ("Interest Meeting"), sentence case for slide action titles and statements. ≤2 lines on social, ≤2 lines on slides.
 - **Scales** (all in tokens.css):
   - Social (px @1080w): display 140, h1 104, h2 72, lead 44, body 34, small 28, label 26
-  - Slides (pt @960×540): cover 60, section 48, title 36, lead-in 20, body 17 (min 16), small 13, label 14, stat 48
+  - Slides: follow the Event Slideshow (Georgia; title 36, lead-in 19.5 bold, body 17.5, role 12.7 oxblood). See `references/pitch-deck-rubric.md`
   - Documents (pt, Letter): title 28, h2 14, body 11, small 9, label 9
-- Never use Georgia, Libre Baskerville, Cormorant, Inter, or Consolas as a designed choice.
+- Never use Libre Baskerville, Cormorant, Inter, or Consolas. Georgia is used **only in slide decks**, because the Event Slideshow uses it.
 
 ## Geometry & texture
 - **Corners:** square, always. Circles only for headshots (with a 1.5px `--vf-gold-deep` ring offset by 7px on light).

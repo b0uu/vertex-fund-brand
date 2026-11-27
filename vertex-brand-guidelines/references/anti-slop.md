@@ -49,7 +49,7 @@ So the Vertex look only reads as *ours* when the content is specific: real photo
   - Elements inside a group: 24–40px.
   - Between groups: 48–80px.
   - The canvas margin (96px) is the largest gap on the page. Nothing inside it should exceed it.
-- **One alignment axis per piece.** Default is left-aligned. Center only formal single-column pieces (the P2 roster), and never center body text.
+- **One alignment axis per piece.** Default is left-aligned. Center only single-message pieces (like the deck's Check-in, Questions and Thank-you slides), and never center body text.
 - **Density matches the medium:**
   - A post carries one message and ≤40 words.
   - A slide carries one message and ≤40 words of body.

@@ -3,7 +3,7 @@
 Every social graphic = **Canvas → (Texture) → Masthead → ONE Body primitive → (CTA)**.
 No all-caps text (the lockup's "UNIVERSITY OF MARYLAND" subline is the one exception) and no monospace on social graphics. Labels are EB Garamond italic in sentence case.
 Don't make single-purpose templates ("Thank You post"). Pick a primitive, a mode, and a format, then fill it in.
-Reference implementation: `templates/ig-post-master.html` (both primitives, built on the tokens).
+References: the posted originals are in `assets/examples/`. `templates/ig-post-master.html` holds the same two posts rebuilt on the tokens, as starting code.
 
 ## 1. Canvas: format × mode
 
@@ -30,7 +30,7 @@ Reference implementation: `templates/ig-post-master.html` (both primitives, buil
 | Photo cover | **Full-colour** event photo, brightness 0.9, top ~65% (882px), 300px top scrim ink 60%→0, 128px seam into ink | Dark + Statement. **Approved reference:** `assets/examples/thanks-for-coming-posted.jpg` |
 | Photo band | Grayscale photo, contrast 1.08, 30% over ink, gold-deep wash at 62%, top ~56% of the canvas, ≤120px seam into ink | Dark + Statement |
 | Watermark | Monogram 600px wide, 15–17% opacity, bleeding off the top-right (right −60px, top 80px) | Dark + Statement |
-| Gilt frame | 1.5px `--vf-gold-deep`, inset 32px | Light + Grid (formal) |
+| Gilt frame | 1.5px `--vf-gold-deep`, inset 32px (from the website's 2026 new-exec post) | Light, formal posts |
 | Hairline frame | 2px `--vf-frame-dark`, inset 48px | Banners, OG images |
 
 Never use both frames together. Never put text smaller than 60px over the gold wash (cream on wash is under 3:1).
@@ -40,23 +40,16 @@ Never use both frames together. Never put text smaller than 60px over the gold w
 - **Wordmark XL:** "Vertex *Fund*" at 84px, "University of Maryland" at 28px, no monogram. Pairs with a watermark.
 - **Inline lockup:** monogram 84px + "Vertex *Fund*" at 64px on one line, no subline. Use it over a photo cover, top-left.
 - **Subline in capitals (optional):** any masthead with a subline may set it as "UNIVERSITY OF MARYLAND" (STIX, tracking 0.2em, ~75% of the sentence-case size). This is the only all-caps text allowed.
-- **Centered mark:** monogram 120px centered above the headline. For rosters and formal posts.
 
 ## 4. Body primitives (choose ONE)
 
-Only two layouts are approved right now. A facts/ledger layout, a big-numbers layout and a sidebar recap layout were **removed until they're redesigned to standard**. Don't improvise substitutes for them. If a post seems to need one, use P1 or P2, or ask.
+Only **P1 Statement** is approved, in two variants, and both come from posts we actually published. Every other layout (facts/ledger, big numbers, sidebar recap, people grid) was removed until it's designed with the exec board. Don't improvise substitutes: if a post needs one, propose it to the user as a new design and get approval before using it.
 
 ### P1 · Statement
 A huge headline anchored bottom-left, then a two-line detail stack (line 1 in accent, line 2 in `--fg-2`), then a CTA line.
 - **Slots:** `display` headline (≤2 lines, ≤14 characters per line at 140px), `lead` × 2, `cta`, optional partner row higher up.
 - **Use for:** event announcements, thank-yous, "applications open", quotes (set quotes in italic at h1 size, attribution as a label).
 - **Photo cover variant (approved, posted):** photo cover + inline lockup + `display` headline + one gold line. The reference is the interest-meeting thank-you: "Thanks for coming!" / "Stay tuned for future public events & for Spring cohort!". It's rendered in `templates/ig-post-master.html`, and the posted version is in `assets/examples/`.
-
-### P2 · Grid
-N repeating cells in 3 columns (or 2 for text-heavy cells). Each cell: media, name (500 weight), role (signal red on light), and meta (22px, `--fg-3`, e.g. "Finance · ’29").
-- **Cell media:** a headshot circle (240px, gold-deep ring), a sponsor logo, or a 4:5 photo.
-- **Max:** 6 cells (2 rows) per slide. More than that becomes a carousel.
-- **Use for:** new execs, speaker lineups, partner thanks.
 
 ## 5. CTA line
 A 56×2px dash, then an italic line at 32px.
@@ -68,7 +61,7 @@ A 56×2px dash, then an italic line at 32px.
 - **Slide 1:** usually P1.
 - **Slides 2–n:** photos only, cropped 4:5 by hand, one consistent light edit, no tint, no text, no logos.
 - **Order:** the room, then the presenters, then the team, then partners, then the crowd.
-- **Optional end slide:** P2 thanking sponsors (their logos as cells).
+- **Optional end slide:** P1 dark statement thanking the sponsor, with their logo.
 - 5–7 slides total. The details go in the caption, not on the photos.
 
 ## 7. Captions (copy around the graphic)
@@ -84,7 +77,7 @@ A 56×2px dash, then an italic line at 32px.
 | Event announcement | portrait · dark · photo band · Wordmark XL · P1 · gold CTA |
 | Post-event thank-you | portrait · dark · **photo cover** · inline lockup · P1 ("Thanks for coming!") — the approved reference |
 | Applications open | portrait · light · corner lockup · P1 (headline carries the specifics) · red CTA |
-| New exec board | portrait · light · gilt frame · centered mark · P2 |
-| Speaker announcement | portrait · light · corner lockup · P2 (2 columns, 1–2 cells) |
+| New exec board | **No approved layout yet.** Propose one and get approval first |
+| Speaker announcement | **No approved layout yet.** Propose one and get approval first |
 | Sponsor recap | carousel: P1 photo-cover thank-you, untouched photo slides, P1 dark sponsor end slide ("Thank you, Brown Advisory." + their logo) |
 | Stock pitch teaser | portrait · dark · corner lockup · P1 (headline states the call) + disclaimer as the last line |

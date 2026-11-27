@@ -68,13 +68,12 @@ EB Garamond, STIX Two Text and DM Mono, all free. See `fonts/README.md` for link
 - Ask the person before using their headshot outside Vertex Fund materials.
 - For the full-resolution originals, see the website repo (`vertex-fund-website/pictures`).
 
-## Templates and previews — `previews/`
-`approved-thanks-for-coming.png` is the post we posted and liked: a full-colour photo cover, the inline logo and a big headline. Start from it for thank-yous and recaps.
+## References — `previews/`
+These are designs we actually used. Match them when making something new.
+- **`event-slideshow/`:** all 15 slides plus a PDF of the deck we presented at the Nov 18 interest meeting. Every new deck should look like this one.
+- **`posted-interest-meeting.png`:** the Instagram post announcing the interest meeting.
+- **`thanks-for-coming-posted.jpg`:** the "Thanks for coming!" carousel cover we posted.
 
-<img src="previews/approved-thanks-for-coming.png" width="360" alt="Thanks for coming post">
+<img src="previews/event-slideshow/slide-04.jpg" width="480" alt="Event slideshow, slide 4">
 
-Pictures of the approved layouts:
-- `social-layouts.png` shows the Instagram/LinkedIn post layouts.
-- `slide-layouts.png` shows the slide deck layouts.
-
-The live, editable versions are in `vertex-brand-guidelines/templates/`. The rules are in `brand-guidelines.md`.
+The rules are in `brand-guidelines.md`.

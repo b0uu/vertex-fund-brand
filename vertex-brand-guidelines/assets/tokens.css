@@ -47,15 +47,23 @@
   --vf-s-label:    26px;  /* EB Garamond italic, sentence case, --fg-3 — minimum size on any post */
   /* (--vf-s-stat removed with the metric layout; re-add when a numbers layout is redesigned) */
 
+  /* ---------- Slide decks: measured from the Event Slideshow (assets/examples/event-slideshow/).
+     Decks intentionally differ from the general theme: Georgia + oxblood. ---------- */
+  --vf-deck-font:   Georgia, 'Times New Roman', serif;
+  --vf-deck-ink:    #13120E;  /* titles, lead-ins */
+  --vf-deck-body:   #45403B;  /* body under lead-ins */
+  --vf-deck-accent: #A7221D;  /* oxblood: roles, bullets, the one key stat */
+  --vf-deck-muted:  #888888;  /* secondary callout */
+  --vf-deck-rule:   #E1E1DF;  /* 1pt header hairline */
   /* ---------- Slide scale (pt on a 960×540pt / 16:9 Google Slides page) ---------- */
-  --vf-p-cover:   60pt;
-  --vf-p-section: 48pt;
+  --vf-p-cover:   60pt;   /* opening/section titles (59–64 in the reference) */
+  --vf-p-section: 60pt;
   --vf-p-title:   36pt;   /* content-slide title */
-  --vf-p-lead:    20pt;   /* bold lead-in (EB Garamond 600) */
-  --vf-p-body:    17pt;   /* never below 16pt */
-  --vf-p-small:   13pt;   /* captions, sources */
-  --vf-p-label:   14pt;   /* EB Garamond italic, sentence case */
-  --vf-p-stat:    48pt;   /* EB Garamond numerals (STIX Two Text if Slides shows old-style figures) */
+  --vf-p-lead:    19.5pt; /* bold lead-in */
+  --vf-p-body:    17.5pt; /* body under a lead-in */
+  --vf-p-small:   12.7pt; /* team roles */
+  --vf-p-label:   15pt;   /* team names (bold) */
+  --vf-p-stat:    25.5pt; /* key stat / secondary callout */
 
   /* ---------- Document scale (pt, US Letter) ---------- */
   --vf-d-title:   28pt;
