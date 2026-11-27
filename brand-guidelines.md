@@ -196,7 +196,7 @@ Nothing ships unseen. Every design Claude makes with this skill must be rendered
 ## 11. Using Claude with this system
 1. **Install the skill.** Zip `vertex-brand-guidelines/` and upload it in Claude → Settings → Capabilities → Skills, or keep it in this repo for Claude Code.
 2. **Ask plainly**, e.g. "Make an Instagram post announcing our Polymarket speaker on Dec 3." Claude picks the primitive, mode and format from the rules.
-3. **When a new design works well**, add it as a row in the "Adapting a layout" table in `social-layouts.md`, not as a new template file.
+3. **When a new design has been used and the exec board likes it**, add the real file (an export or screenshot of what was posted or presented) to `assets/examples/` and note it in that folder's README. Proposals Claude generates never become references until they have been used and approved.
 4. **Changing a color or size:**
    1. Edit `tokens.css`.
    2. Run `python3 tools/build_template.py` to refresh the HTML master.
