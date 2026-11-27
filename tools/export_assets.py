@@ -134,6 +134,8 @@ def main():
         for src, dst in events.items():
             im = Image.open(os.path.join(a.photos, src)).convert('RGB'); im.thumbnail((2400, 2400))
             os.makedirs(os.path.join(P, 'events'), exist_ok=True); im.save(os.path.join(P, 'events', dst), quality=88)
+        full = os.path.join(ROOT, 'tools/photo-src/interest-meeting-full-room.jpg')
+        if os.path.exists(full): shutil.copy(full, os.path.join(P, 'events', 'interest-meeting-full-room.jpg'))
         for src in sorted(glob.glob(os.path.join(a.photos, '*_headshot.webp'))):
             n = os.path.basename(src).replace('_headshot.webp', '')
             im = Image.open(src).convert('RGB'); im.thumbnail((1000, 1000))

@@ -35,13 +35,20 @@ body { background: #DDD8CF; padding: 64px; display: flex; flex-direction: column
 .photo-band::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 120px;
   background: linear-gradient(to bottom, transparent, var(--vf-ink)); }
 .photo-band .slot { position: absolute; right: 96px; bottom: 150px; font: italic 400 24px var(--vf-font-serif); color: rgba(250,250,248,.35); }
+/* Photo cover: FULL-COLOUR event photo on the top ~65%, short scrims for legibility (approved reference: Thanks for coming) */
+.photo-cover { position: absolute; left: 0; right: 0; top: 0; height: 882px; z-index: 0; overflow: hidden; background: var(--vf-ink); }
+.photo-cover img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(.9); }
+.photo-cover::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 300px; background: linear-gradient(to bottom, rgba(20,18,14,.6), rgba(20,18,14,0)); z-index: 1; }
+.photo-cover::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 128px; background: linear-gradient(to bottom, rgba(20,18,14,0), var(--vf-ink) 94%); }
+/* Inline masthead: monogram + name on one line, no subline (used over photos) */
+.masthead.inline .mono { width: 84px; } .masthead.inline .name { font-size: 64px; }
 /* Watermark: monogram bleeding off the top-right */
 .watermark { position: absolute; right: -60px; top: 80px; width: 600px; opacity: .16; z-index: 0; color: var(--fg); --gold-fg: var(--fg); }
 /* Frames */
 .frame-gilt::before, .frame-hair::before { content: ""; position: absolute; inset: 32px; pointer-events: none; z-index: 3; }
 .frame-gilt::before { border: 1.5px solid var(--vf-frame-gold); }
 .frame-hair::before { border: 2px solid var(--vf-frame-dark); inset: 48px; }
-.vf-canvas > *:not(.photo-band):not(.watermark) { position: relative; z-index: 1; }
+.vf-canvas > *:not(.photo-band):not(.photo-cover):not(.watermark) { position: relative; z-index: 1; }
 
 /* =================== Masthead (logo positions) =================== */
 .mono { display: block; height: auto; aspect-ratio: __AR__; overflow: visible; }
@@ -112,6 +119,20 @@ body { background: #DDD8CF; padding: 64px; display: flex; flex-direction: column
     <h1 class="display">Interest<br>Meeting</h1>
     <div class="lead"><div class="g">Wednesday, November 18 · 6:00 PM</div><div>Stamp · Margaret Brent A, Room 2112</div></div>
     <div class="cta">RSVP via link in bio</div>
+  </div>
+</section>
+
+<!-- ============ P1 · STATEMENT, PHOTO COVER · dark ============ -->
+<div class="board-label">P1 · Statement, photo cover · dark · 1080×1350 — approved reference: the posted interest meeting thank-you (carousel cover)</div>
+<section class="vf-canvas vf-dark fmt-portrait">
+  <div class="photo-cover"><img src="data:image/jpeg;base64,__COVER__" alt="Full room at the Vertex Fund interest meeting"></div>
+  <div class="masthead inline">
+    <svg class="mono" viewBox="__VB__" aria-hidden="true"><path class="v" d="__V__"/><path class="f" d="__F__"/></svg>
+    <div class="name">Vertex <em>Fund</em></div>
+  </div>
+  <div class="p-statement">
+    <h1 class="display">Thanks for coming!</h1>
+    <div class="lead" style="font-size: var(--vf-s-body); line-height: 1.3"><div class="g">Stay tuned for future public events &amp; for Spring cohort!</div></div>
   </div>
 </section>
 

@@ -57,7 +57,8 @@ Editorial, quiet, and confident, like a well-set financial broadsheet. Warm pape
 - Fallbacks: `Georgia, 'Times New Roman', serif` / `ui-monospace, Menlo, monospace`. All three are Google Fonts, so they're available in Google Slides via *More fonts*.
 - **Monospace stays small.** Never use DM Mono for headlines, big stats, dates, labels, or anything the eye lands on first. Hero numbers are EB Garamond.
 - **Numerals:** EB Garamond can render old-style (bouncing) figures. In HTML always apply `font-variant-numeric: lining-nums` (class `.vf-nums`). In Google Slides, if big stats show old-style figures, set just those numbers in STIX Two Text (lining by design).
-- **No all caps, ever.** Not for headlines, eyebrows, labels, buttons, table headers, or the lockup. No `text-transform: uppercase`, no letter-spaced caps, no small caps. Only tickers (NVDA) and true acronyms (UMD, AUM, DCF, FY26E) keep their capitals.
+- **No all caps, with one exception.** Not for headlines, eyebrows, labels, buttons, or table headers. No `text-transform: uppercase`, no small caps. Tickers (NVDA) and acronyms (UMD, AUM, FY26E) keep their capitals.
+- **The one exception is the wordmark subline.** "UNIVERSITY OF MARYLAND" may be set in tracked capitals (0.2em) directly under "Vertex Fund" as part of the lockup (`vf-lockup-*-caps.svg`). Sentence case ("University of Maryland") is the default; pick one per piece. Nothing else on the piece may be in capitals.
 - **Labels/eyebrows:** EB Garamond *italic*, sentence case, `--fg-3`, no extra tracking ("Spring 2027 · Analyst cohort").
 - **Headlines:** short; Title Case for event names ("Interest Meeting"), sentence case for slide action titles and statements. ≤2 lines on social, ≤2 lines on slides.
 - **Scales** (all in tokens.css):
@@ -71,14 +72,16 @@ Editorial, quiet, and confident, like a well-set financial broadsheet. Warm pape
 - **No drop shadows, glows, blur, bevels, or cards.** Separate content with whitespace and hairlines (1px; 2px on 1080 canvases).
 - **Margins:** social 96px (portrait/square; 88px on 1080×1080), story 220px top / 300px bottom; slides 54pt left/right; Letter 0.75in.
 - **Frames (optional):** gilt frame on light = 1.5px `--vf-gold-deep` inset 32px; hairline frame on dark = 2px `--vf-frame-dark` inset 48px. Never both.
-- **Photo band (dark posts):** grayscale photo (contrast 1.08) at 30% over ink, gold-deep wash at 62%, covering the top ~56%, ending in a ≤120px seam into ink. No text smaller than 60px over the wash.
+- **Photo treatments (dark posts), pick one:**
+  - **Photo cover:** a full-colour event photo (brightness 0.9) on the top ~65%, with a 300px top scrim (ink 60%→0) and a 128px seam into ink. This is the default for recaps and thank-yous; the approved reference is `assets/examples/thanks-for-coming-posted.jpg`.
+  - **Photo band:** a grayscale photo at 30% under a gold-deep wash at 62%, covering the top ~56%. Use it for announcements where the photo is texture rather than the subject. No text smaller than 60px over the wash.
 - **Watermark (optional):** monogram 600px wide, 15–17% opacity, bleeding off the top-right. Max one per piece.
 - **Signature motif:** 56×2px dash in the accent color, then an italic line ("RSVP via link in bio").
 - **Photos:** real members, rooms, and events over stock. Consistent light edit across a set. No filters, tints, or text on carousel photo slides; the cover carries the design.
 - Max two texture modules per piece (frame, photo band, watermark).
 
 ## Logo rules
-- Files: `assets/logo/vf-monogram-{on-light|on-dark|mono-ink|mono-paper}.svg`, `vf-lockup-…svg` (mark + "Vertex Fund" + "University of Maryland"), `vf-avatar-{ink|paper}-1080.svg`. All outlined — use them, never retype in a font.
+- Files: `assets/logo/vf-monogram-{on-light|on-dark|mono-ink|mono-paper}.svg`, `vf-lockup-…svg` (mark + "Vertex Fund" + "University of Maryland"; `-caps` variants set it in tracked capitals), `vf-avatar-{ink|paper}-1080.svg`. All outlined — use them, never retype in a font.
 - On light: ink V + `--vf-gold-deep` *f*. On dark: paper V + `--vf-gold` *f*. Mono versions for one-color printing or over photos.
 - Clear space ≥ 25% of the monogram's height on all sides. Minimum monogram width 24px / 0.25in.
 - Placement: top-left at the margin (default), centered above a headline (formal/roster), or as a watermark. Never center-bottom, never rotated, never outlined, recolored, stretched, or given effects.
@@ -87,7 +90,7 @@ Editorial, quiet, and confident, like a well-set financial broadsheet. Warm pape
 ## Voice
 - Plain, specific, confident; no hype. "Applications are open", not "Don't miss out!!".
 - Lead with the fact (what, when, where), then the reason. Numbers beat adjectives.
-- Avoid exclamation marks except for a single playful label ("Free food!"). No emoji in graphics.
+- Exclamation marks: at most one per line, and only in warm moments (a thank-you, "Free food!"), never in announcements of facts. No emoji in graphics.
 - House style: "Vertex Fund" (never "VF" or "Vertex" alone in headings), "University of Maryland" / "UMD", en dashes for ranges (30–50), curly apostrophes in years ('27), "6:00 PM", "Wednesday, November 18".
 - Investment content (pitches, theses, positions) carries: *For educational purposes only. Not investment advice.*
 
@@ -110,7 +113,7 @@ Never deliver a design you haven't looked at. Code that "should" render correctl
 
 ## Build checklist (run before delivering)
 1. Every color is a token; every size is on a scale; one accent per element.
-2. Fonts: EB Garamond everywhere; DM Mono only in tables/axes; STIX only in the lockup. Lining numerals. Zero all-caps text.
+2. Fonts: EB Garamond everywhere; DM Mono only in tables/axes; STIX only in the lockup. Lining numerals. No all caps except the lockup subline.
 3. Logo from `assets/logo/`, correct mode variant, clear space respected.
 4. Margins and safe zones held; nothing smaller than the label size.
 5. Contrast: small text ≥4.5:1 (never gold-deep or stone for small text on light).

@@ -13,6 +13,8 @@ These files are generated from the master files by `tools/export_assets.py`. Don
 | One-color print, light background | `monogram/vf-monogram-mono-ink` | `lockup/vf-lockup-mono-ink` |
 | One-color print or over photos, dark background | `monogram/vf-monogram-mono-paper` | `lockup/vf-lockup-mono-paper` |
 
+Every lockup also has a `-caps` version that sets "UNIVERSITY OF MARYLAND" in widely spaced capitals. That subline is the only place capitals are allowed; sentence case is the default.
+
 Each logo comes in three versions:
 - **.svg:** vector; sharp at any size. Use it for print, the web, Figma and Canva.
 - **-1024w.png:** transparent background. Use it for slides and documents.
@@ -59,6 +61,10 @@ EB Garamond, STIX Two Text and DM Mono, all free. See `fonts/README.md` for link
 - For the full-resolution originals, see the website repo (`vertex-fund-website/pictures`).
 
 ## Templates and previews — `previews/`
+`approved-thanks-for-coming.png` is the post we posted and liked: a full-colour photo cover, the inline logo and a big headline. Start from it for thank-yous and recaps.
+
+<img src="previews/approved-thanks-for-coming.png" width="360" alt="Thanks for coming post">
+
 Pictures of the approved layouts:
 - `social-layouts.png` shows the Instagram/LinkedIn post layouts.
 - `slide-layouts.png` shows the slide deck layouts.

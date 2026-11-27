@@ -48,15 +48,16 @@ nx=maxx+gap
 nsize=S*0.42
 name1,xe1=run(reg,'Vertex ',nx,-mh*0.40+0,nsize,-0.01)
 name2,xe2=run(reg,'Fund',xe1,-mh*0.40,nsize,-0.01)
-ssize=S*0.155
-sub,xe3=run(reg,'University of Maryland',nx+1,-mh*0.40+ssize*1.75,ssize,0.01)
-# remove trailing track
-right=max(xe2,xe3-0.01*ssize)
-lvb=(minx,-maxy,right-minx,maxy-miny)
-for k,(cv,cf) in COL.items():
-    sc = {'on-light':'#6E685F','on-dark':'#8C867E'}.get(k,cv)
-    body=f'<path fill="{cv}" d="{vd}"/><path fill="{cf}" d="{fd}"/><path fill="{cv}" d="{name1}"/><path fill="{cf}" d="{name2}"/><path fill="{sc}" d="{sub}"/>'
-    open(f'{OUT}/vf-lockup-{k}.svg','w').write(svg(lvb,body,'Vertex Fund, University of Maryland'))
+# Two sublines: sentence case (default) and tracked capitals (the one allowed all-caps exception)
+SUBS={'': ('University of Maryland', S*0.155, 0.01, 1.75), '-caps': ('UNIVERSITY OF MARYLAND', S*0.115, 0.2, 2.2)}
+for suffix,(text,ssize,trk,lead) in SUBS.items():
+    sub,xe3=run(reg,text,nx+1,-mh*0.40+ssize*lead,ssize,trk)
+    right=max(xe2,xe3-trk*ssize)
+    lvb=(minx,-maxy,right-minx,maxy-miny)
+    for k,(cv,cf) in COL.items():
+        sc = {'on-light':'#6E685F','on-dark':'#8C867E'}.get(k,cv)
+        body=f'<path fill="{cv}" d="{vd}"/><path fill="{cf}" d="{fd}"/><path fill="{cv}" d="{name1}"/><path fill="{cf}" d="{name2}"/><path fill="{sc}" d="{sub}"/>'
+        open(f'{OUT}/vf-lockup-{k}{suffix}.svg','w').write(svg(lvb,body,'Vertex Fund, University of Maryland'))
 # avatar (proposed gold f), 1080 square, ink bg, monogram centered occupying ~52% width (inside circle safe zone)
 W=1080; mw=maxx-minx; sc=(W*0.50)/mw; cx=(W-mw*sc)/2 - minx*sc; cy=W/2 + (maxy+miny)/2*sc
 body=f'<rect width="{W}" height="{W}" fill="#14120E"/><g transform="translate({cx:.2f} {cy:.2f}) scale({sc:.4f})"><path fill="#FAFAF8" d="{vd}"/><path fill="#D6A72A" d="{fd}"/></g>'

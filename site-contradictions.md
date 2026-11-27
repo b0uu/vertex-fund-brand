@@ -12,7 +12,6 @@ The site is the *origin* of the palette (`--white`, `--off`, `--ink`, `--ink-s`,
 | 2 | Same SVGs, plus `favicon.svg` / `favicon-red.svg` | The logo is **live text** (`<text>` + `@font-face`). Favicons ask for Georgia, and the others fall back to Georgia if the TTF doesn't load (GitHub previews, many uploaders) | The mark must be outlined | Swap in the outlined `assets/logo/*.svg` paths |
 | 3 | `favicon-red.svg` (unused but in the repo) | Red *f* on ink | Gold identity | Delete, or regenerate in gold |
 | 4 | `index.html` `.apply-cta` | **Libre Baskerville** 700, uppercase, tracked | EB Garamond everywhere; no all caps | EB Garamond 500, sentence case, red |
-| 4b | `branding/og-image.svg`, `linkedin-cover-*.svg`, `vertex-social-post-1080.svg` | "UNIVERSITY OF MARYLAND" in tracked capitals | No all caps; the lockup reads "University of Maryland" | Use `assets/logo/vf-lockup-*.svg` |
 
 ## Medium
 

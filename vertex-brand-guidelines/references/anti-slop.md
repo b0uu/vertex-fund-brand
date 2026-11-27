@@ -16,7 +16,7 @@ So the Vertex look only reads as *ours* when the content is specific: real photo
 
 ### Type
 - [ ] More than **two type families** on one piece, not counting the logo. No "accent" font added for numbers or quotes. (Past failure: Cormorant Garamond brought in for recap stats.)
-- [ ] Any **all-caps** text, letter-spaced labels, or small caps. Tickers and acronyms excepted.
+- [ ] Any **all-caps** text, letter-spaced labels, or small caps. Excepted: tickers, acronyms, and the lockup subline "UNIVERSITY OF MARYLAND".
 - [ ] **Monospace** used for anything the eye lands on first: headlines, stats, dates, labels, links.
 - [ ] Gradient text, outlined text, or text with shadows or glows.
 
@@ -70,7 +70,7 @@ So the Vertex look only reads as *ours* when the content is specific: real photo
 - Adjective triads ("rigorous, collaborative, and driven"). Pick the one that's true.
 - Rhetorical-question hooks ("Ready to take the next step?", "The catch?").
 - Summary lines that restate what the graphic already says.
-- More than one em dash per piece of copy. More than one exclamation mark per piece.
+- More than one em dash per piece of copy. More than one exclamation mark per line, or any in a plain factual announcement.
 
 **Instead**
 - **Headline:** the event or the fact, in ≤5 words. "Interest Meeting." "Applications are open." "Thank you for coming."

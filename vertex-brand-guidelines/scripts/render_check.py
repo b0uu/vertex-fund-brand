@@ -48,7 +48,7 @@ CHECK_JS = r"""
       if (parseFloat(cs.fontSize) < minPx - 0.1) out.push([i, 'too-small', tag, cs.fontSize + ' :: ' + txt.slice(0, 30)]);
       // 5. all caps
       if (cs.textTransform === 'uppercase' || cs.fontVariantCaps !== 'normal') out.push([i, 'all-caps', tag, txt.slice(0, 40)]);
-      const words = txt.split(/\s+/).filter(w => /[A-Z]{4,}/.test(w) && !acr.test(w.replace(/[^\w\[\]]/g, '')));
+      const words = txt.replace(/UNIVERSITY OF MARYLAND/g, '').split(/\s+/).filter(w => /[A-Z]{4,}/.test(w) && !acr.test(w.replace(/[^\w\[\]]/g, '')));  // the lockup subline is the one allowed exception
       if (words.length >= 2) out.push([i, 'all-caps', tag, txt.slice(0, 40)]);
       // 6. monospace as a focal element
       if (fam.includes('mono') && parseFloat(cs.fontSize) > (isSlide ? 17.4 : 24) && !el.closest('table'))
