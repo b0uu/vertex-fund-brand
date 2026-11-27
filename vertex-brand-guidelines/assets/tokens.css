@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Vertex Fund — design tokens  (SINGLE SOURCE OF TRUTH)
+   If any document, slide, or skill file disagrees with this file, this file wins.
+   Base values come from vertexumd.com (:root in index.html / team.html).
+   v1.0 · 2026-11-27
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=STIX+Two+Text:ital,wght@0,400;0,500;1,400&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+  /* ---------- Neutrals (warm; never pure black / pure white / cool grey) ---------- */
+  --vf-ink:        #14120E;  /* primary text on light; dark-mode background        (site --ink)   */
+  --vf-ink-2:      #46403A;  /* secondary text on light — 9.8:1 on paper           (site --ink-s) */
+  --vf-ink-3:      #6E685F;  /* small meta text on light — 5.3:1 on paper          (NEW)          */
+  --vf-stone:      #8C867E;  /* large/non-text on light (3.5:1); tertiary text on dark (5.2:1) (site --ink-m) */
+  --vf-paper:      #FAFAF8;  /* light background; primary text on dark — 17.9:1   (site --white) */
+  --vf-paper-2:    #F2EFE9;  /* alternate light surface, print stock, photo mats   (site --off)   */
+  --vf-paper-dim:  #C9C3B8;  /* secondary text on dark — 10.7:1 on ink            (NEW)          */
+
+  /* ---------- Accents ---------- */
+  /* GOLD = identity: the f, the word "Fund", rules, frames, highlights, primary chart series */
+  --vf-gold:       #D6A72A;  /* gold on DARK backgrounds — 8.4:1 on ink           (site --gold)  */
+  --vf-gold-deep:  #A98018;  /* gold on LIGHT backgrounds — 3.5:1: ≥24px text or graphics only (site --gold-d) */
+  /* RED = signal: CTAs, deadlines, "live/new", negative values, small accent text on light */
+  --vf-red:        #B8000F;  /* red on LIGHT — 6.6:1 on paper                     (site --red)   */
+  --vf-red-bright: #E8695C;  /* red on DARK (charts/negatives only) — 5.9:1 on ink (NEW)         */
+
+  /* ---------- Lines & frames ---------- */
+  --vf-rule-light: rgba(20, 18, 14, 0.10);    /* hairline on light (site --rule) */
+  --vf-rule-dark:  rgba(250, 250, 248, 0.14); /* hairline on dark */
+  --vf-frame-dark: rgba(250, 250, 248, 0.08); /* inset frame on dark social/OG art */
+  --vf-frame-gold: var(--vf-gold-deep);       /* "gilt frame" on light — 1.5px */
+
+  /* ---------- Type families ---------- */
+  --vf-font-mark:  'STIX Two Text', Georgia, 'Times New Roman', serif;  /* logo lockup + typeset "Vertex Fund" only */
+  --vf-font-serif: 'EB Garamond', Georgia, 'Times New Roman', serif;    /* all headlines + body */
+  --vf-font-mono:  'DM Mono', 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace; /* SUPPORTING ONLY: table figures, tickers in tables, chart axes */
+  /* Approved alternate mono: IBM Plex Mono (swap the first family only; never mix both in one piece). */
+
+  /* ---------- Social scale (px on a 1080-wide canvas) ---------- */
+  --vf-s-display: 140px;  /* lh 0.95, tracking -0.02em, max 2 lines */
+  --vf-s-h1:      104px;  /* lh 1.00, tracking -0.015em */
+  --vf-s-h2:       72px;  /* lh 1.05 */
+  --vf-s-lead:     44px;  /* lh 1.25 — date/place stacks, subtitles */
+  --vf-s-body:     34px;  /* lh 1.35 */
+  --vf-s-small:    28px;  /* lh 1.35 — minimum for reading copy */
+  --vf-s-label:    26px;  /* EB Garamond italic, sentence case, --fg-3 — minimum size on any post */
+  /* (--vf-s-stat removed with the metric layout; re-add when a numbers layout is redesigned) */
+
+  /* ---------- Slide scale (pt on a 960×540pt / 16:9 Google Slides page) ---------- */
+  --vf-p-cover:   60pt;
+  --vf-p-section: 48pt;
+  --vf-p-title:   36pt;   /* content-slide title */
+  --vf-p-lead:    20pt;   /* bold lead-in (EB Garamond 600) */
+  --vf-p-body:    17pt;   /* never below 16pt */
+  --vf-p-small:   13pt;   /* captions, sources */
+  --vf-p-label:   14pt;   /* EB Garamond italic, sentence case */
+  --vf-p-stat:    48pt;   /* EB Garamond numerals (STIX Two Text if Slides shows old-style figures) */
+
+  /* ---------- Document scale (pt, US Letter) ---------- */
+  --vf-d-title:   28pt;
+  --vf-d-h2:      14pt;
+  --vf-d-body:    11pt;   /* lh 1.5 */
+  --vf-d-small:    9pt;
+  --vf-d-label:    9pt;   /* EB Garamond italic, sentence case */
+
+  /* ---------- Geometry ---------- */
+  --vf-radius: 0;              /* square corners everywhere; circles allowed ONLY for headshots */
+  --vf-shadow: none;           /* no drop shadows, glows, or blurs */
+  --vf-unit: 8px;              /* spacing grid */
+  --vf-margin-post: 96px;      /* 1080×1350 and 1080×1080 safe margin */
+  --vf-margin-slide: 54pt;     /* left/right on 960pt slides */
+  --vf-margin-doc: 0.75in;     /* US Letter */
+  --vf-rule-w: 1px;            /* hairlines (2px on 1080 social canvases) */
+  --vf-accent-rule: 56px;      /* the gold dash before an italic line (2px tall) */
+}
+
+/* ---------- Mode helpers (use on any canvas/section) ---------- */
+.vf-light { background: var(--vf-paper); color: var(--vf-ink);
+  --fg: var(--vf-ink); --fg-2: var(--vf-ink-2); --fg-3: var(--vf-ink-3);
+  --gold-fg: var(--vf-gold-deep); --signal: var(--vf-red); --rule: var(--vf-rule-light); }
+.vf-dark  { background: var(--vf-ink); color: var(--vf-paper);
+  --fg: var(--vf-paper); --fg-2: var(--vf-paper-dim); --fg-3: var(--vf-stone);
+  --gold-fg: var(--vf-gold); --signal: var(--vf-red-bright); --rule: var(--vf-rule-dark); }
+
+/* NO ALL CAPS anywhere (no text-transform: uppercase, no small caps). Tickers and true acronyms keep their own capitals. */
+
+/* Lining figures: EB Garamond can render old-style numerals — force lining wherever numbers matter */
+.vf-nums { font-variant-numeric: lining-nums tabular-nums; }
