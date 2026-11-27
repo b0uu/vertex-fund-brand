@@ -17,8 +17,8 @@ Same tokens, same type families. EB Garamond for everything, DM Mono only for fi
 
 ## 2. Layouts
 - **D1 · Classic letter:** masthead, title, date, an opening paragraph, a photo pair (same height), a stat strip (3–4 stats in 24pt EB Garamond lining numerals, gold-deep, with labels), "What we covered" / "What's next" lists, sign-off. For sponsor recaps and thank-you letters.
-- **D2 · Sidebar (Rail + Column):** a 2in rail (sponsor logo, date, place, attendance as italic label/value pairs), a 1px vertical rule, then the main column. For recaps, one-pagers and event briefs.
-- **D3 · Memo:** a ledger header block, then numbered sections (see §3).
+- **D2 · Sidebar (Rail + Column)** *(draft, no approved reference)*: a 2in rail (sponsor logo, date, place, attendance as italic label/value pairs), a 1px vertical rule, then the main column. For recaps, one-pagers and event briefs.
+- **D3 · Memo** *(draft, no real memo exists yet)*: a ledger header block, then numbered sections (see §3).
 - **D4 · Flyer / poster:** use the P1 Statement layout scaled to Letter. Margins 0.75in, headline 72–96pt, italic labels 12pt, QR code ≥1.25in with a URL beneath it.
 
 ## 3. Investment memo (stock pitch write-up)

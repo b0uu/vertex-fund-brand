@@ -12,7 +12,7 @@ One invariant system + composable layouts. Never design from first principles; a
 | Deliverable | Read | Start from |
 |---|---|---|
 | Instagram / LinkedIn post, story, carousel, banner, avatar | `references/social-layouts.md` | `templates/ig-post-master.html` |
-| Slide deck (club, event, sponsor, or stock pitch) | `references/pitch-deck-rubric.md` | — |
+| Slide deck (club, event, sponsor, or stock pitch) | `references/pitch-deck-rubric.md` | `templates/deck-master.html` |
 | Memo, recap letter, one-pager, flyer, PDF | `references/documents.md` | — |
 | Any chart or table with numbers | `references/pitch-deck-rubric.md` § Data visualization | — |
 | Logo needed | `assets/logo/` (outlined SVGs — never retype the mark) | — |
@@ -99,6 +99,15 @@ Editorial, quiet, and confident, like a well-set financial broadsheet. Warm pape
 - **Never invent** numbers, names, quotes, or partners. Unknowns stay as `[brackets]`.
 - **Subtract pass + name-swap test** before delivering: delete anything that carries no information; if another club's name fits just as well, add our specifics.
 
+## Visual QA (mandatory, every deliverable, every revision)
+Never deliver a design you haven't looked at. Code that "should" render correctly isn't checked.
+1. Render: `python3 scripts/render_check.py <file.html> --out qa/` writes one PNG per artboard or slide, phone-size thumbnails, and a contact sheet. It also flags overflow, out-of-bounds elements, off-brand fonts, too-small text, all caps, monospace as a focal element, and dead zones (>25% empty).
+2. Fix every automated finding and re-run until it reports none.
+3. **Open and look at every PNG** (full size and thumbnail). Check what scripts can't: awkward line breaks (a word or year alone on a line), collisions, uneven spacing, elements crowding the margin or frame, weak hierarchy, anything in `references/anti-slop.md` §1.
+4. Fix, re-render, look again. Repeat until clean.
+5. If the brand fonts didn't load in the sandbox, say the preview used fallback fonts. If nothing can render at all, tell the user plainly that the design was **not** visually checked.
+6. Non-HTML outputs (Google Slides, PPTX, PDF, images): export or screenshot each page or slide and inspect it the same way.
+
 ## Build checklist (run before delivering)
 1. Every color is a token; every size is on a scale; one accent per element.
 2. Fonts: EB Garamond everywhere; DM Mono only in tables/axes; STIX only in the lockup. Lining numerals. Zero all-caps text.
@@ -107,4 +116,5 @@ Editorial, quiet, and confident, like a well-set financial broadsheet. Warm pape
 5. Contrast: small text ≥4.5:1 (never gold-deep or stone for small text on light).
 6. No shadows, rounded cards, gradients, emoji, or sponsor colors.
 7. Copy passes the voice rules; investment content has the disclaimer.
-8. `references/anti-slop.md` §1 hard fails: zero. Rendered and viewed at actual size and phone-thumbnail size.
+8. `references/anti-slop.md` §1 hard fails: zero.
+9. Visual QA done: rendered, automated checks clean, every page inspected by eye.

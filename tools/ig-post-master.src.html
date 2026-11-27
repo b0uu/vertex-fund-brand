@@ -77,14 +77,14 @@ body { background: #DDD8CF; padding: 64px; display: flex; flex-direction: column
 /* P1 Statement: huge headline anchored bottom-left */
 .p-statement { margin-top: auto; display: flex; flex-direction: column; gap: 30px; }
 /* P2 Grid: N cells (roster, recap items, lineup). 2 or 3 columns. */
-.p-grid { margin-top: 64px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px 24px; text-align: center; }
+.p-grid { margin-top: 80px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px 24px; text-align: center; }
 .p-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); text-align: left; }
-.headshot { width: 240px; aspect-ratio: 1; border-radius: 50%; margin: 0 auto; background: var(--vf-paper-2);
+.headshot { width: 256px; aspect-ratio: 1; border-radius: 50%; margin: 0 auto; background: var(--vf-paper-2);
   box-shadow: 0 0 0 7px var(--vf-paper), 0 0 0 8.5px var(--vf-gold-deep); overflow: hidden; } /* ring, not a drop shadow */
 .headshot img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
-.p-grid .nm { margin-top: 26px; font-size: 32px; font-weight: 500; color: var(--fg); }
-.p-grid .rl { margin-top: 4px; font-size: 24px; color: var(--signal); }
-.p-grid .mt { margin-top: 4px; font-size: 22px; color: var(--fg-3); font-variant-numeric: lining-nums; }
+.p-grid .nm { margin-top: 28px; font-size: 36px; font-weight: 500; color: var(--fg); }
+.p-grid .rl { margin-top: 6px; font-size: 28px; color: var(--signal); }
+.p-grid .mt { margin-top: 4px; font-size: 24px; color: var(--fg-3); font-variant-numeric: lining-nums; }
 /* Partner row (sponsors): italic label over logo, separated by hairline */
 .partners { display: flex; gap: 40px; align-items: flex-start; }
 .partners .logo { margin-top: 14px; width: 150px; height: 110px; border: 2px dashed var(--rule); display: grid; place-items: center; font: italic 400 20px var(--vf-font-serif); color: var(--fg-3); }
@@ -121,7 +121,7 @@ body { background: #DDD8CF; padding: 64px; display: flex; flex-direction: column
   <div class="masthead center">
     <svg class="mono" viewBox="__VB__" aria-hidden="true"><path class="v" d="__V__"/><path class="f" d="__F__"/></svg>
   </div>
-  <h1 class="h2" style="text-align:center;margin-top:28px">New Executives, 2026</h1>
+  <h1 class="h1" style="text-align:center;margin-top:36px;font-size:88px;white-space:nowrap">New Executives, 2026</h1>
   <div class="p-grid">
     <div><div class="headshot"></div><div class="nm">Name Surname</div><div class="rl">Role</div><div class="mt">Finance · ’29</div></div>
     <div><div class="headshot"></div><div class="nm">Name Surname</div><div class="rl">Role</div><div class="mt">CS and Economics · ’28</div></div>

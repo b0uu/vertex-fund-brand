@@ -1,6 +1,6 @@
 # Vertex Fund: Brand Guidelines
 
-**v1.3 · November 2026** (v1.3: social layouts cut to Statement and Grid. v1.2: anti-slop guardrails. v1.1: no all caps; monospace limited to tables and chart axes)
+**v1.4 · November 2026** (v1.4: slide master + mandatory visual QA. v1.3: social layouts cut to Statement and Grid. v1.2: anti-slop guardrails. v1.1: no all caps; monospace limited to tables and chart axes)
 Owner: Vertex Fund executive board. Applies to everything public (Instagram, LinkedIn, the website, flyers) and private (decks, pitches, memos, sponsor letters).
 
 > **How this repo fits together**
@@ -149,10 +149,10 @@ Each works in **light or dark**, and in **portrait, square or story** sizes.
 - Full specs: `references/social-layouts.md`.
 - Slide equivalents: `references/pitch-deck-rubric.md`.
 - Page equivalents: `references/documents.md`.
-- Live reference: `templates/ig-post-master.html`.
+- Live references: `templates/ig-post-master.html` (social) and `templates/deck-master.html` (slides: cover, point grid, roster, statement, partner, call to action).
 
 ## 7. Decks, pitches and charts (summary)
-- **Decks:** paper background, lockup plus hairline header on every slide, 36pt titles, 10 slide archetypes.
+- **Decks:** paper background, lockup plus hairline header on every slide, 36pt titles, 10 slide archetypes (6 approved in `deck-master.html`, 4 drafts).
 - **Stock pitches:**
   - Lead with the call on slide 2 (rating, target, upside).
   - Exactly three thesis pillars.
@@ -186,7 +186,10 @@ Our palette and type sit close to two looks that reviewers now flag as AI-made: 
   - Delete anything that carries no information.
   - Swap in another club's name. If the design still works, it isn't specific enough yet.
 
-## 10. Using Claude with this system
+## 10. Visual QA
+Nothing ships unseen. Every design Claude makes with this skill must be rendered, screenshotted and inspected (`scripts/render_check.py`, then a look at every image) before it's delivered, and again after every revision. If a design couldn't be rendered, Claude must say so. When you make something by hand, export it and check it at full size and at phone-thumbnail size before posting.
+
+## 11. Using Claude with this system
 1. **Install the skill.** Zip `vertex-brand-guidelines/` and upload it in Claude → Settings → Capabilities → Skills, or keep it in this repo for Claude Code.
 2. **Ask plainly**, e.g. "Make an Instagram post announcing our Polymarket speaker on Dec 3." Claude picks the primitive, mode and format from the rules.
 3. **When a new design works well**, add it as a row in the "Adapting a layout" table in `social-layouts.md`, not as a new template file.
@@ -196,8 +199,8 @@ Our palette and type sit close to two looks that reviewers now flag as AI-made: 
    3. Update the tables in this file and `SKILL.md`.
    4. Bump the version above.
 
-## 11. Known gaps (v1)
-- **Pitch and memo specs** are written from best practice; no real Vertex equity pitch exists yet. Revise after the first one.
+## 12. Known gaps (v1)
+- **Draft layouts:** slides S2 section divider, S5 chart, S6 stat strip, S9 table; documents D2 sidebar, D3 memo. Pitch and memo specs are written from best practice; no real Vertex equity pitch exists yet. Revise after the first one.
 - **The Google Slides master** should be rebuilt to these specs. The current decks use Georgia, oxblood `#A7221D`, and stray blacks.
 - **The website** has a short list of conflicts in `site-contradictions.md`. No site changes have been made.
 - **Social layouts removed until redesigned:** a facts/ledger layout ("Applications are open"), a big-numbers layout ("Our first semester") and a sidebar recap layout ("What we covered"). Until then, use P1 or P2.

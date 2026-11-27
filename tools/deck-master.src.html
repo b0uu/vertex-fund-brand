@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vertex Fund — Slide Deck Master (approved layouts)</title>
+<!--
+  HOW TO USE
+  - Each <section class="slide"> is one 16:9 slide at 960×540pt (the Google Slides page size), so every
+    size below is the same number you'd type into Slides.
+  - These six layouts come from decks Vertex Fund has actually presented. Copy one, swap the copy.
+  - Draft layouts (section divider, chart, stat strip, table) are specified in references/pitch-deck-rubric.md
+    but have no approved reference yet. Build them carefully and flag them as drafts.
+  - Tokens are inlined from assets/tokens.css. Do not invent colors or sizes here.
+  - Visual QA is mandatory: python3 scripts/render_check.py templates/deck-master.html
+-->
+<style>
+/*__TOKENS__*/
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #DDD8CF; padding: 48px; display: flex; flex-direction: column; gap: 48px; align-items: center; }
+.board-label { font: italic 400 16pt/1 var(--vf-font-serif); color: var(--vf-ink-2); width: 960pt; margin-bottom: -36px; }
+
+/* =================== Slide frame (every slide) =================== */
+.slide { position: relative; width: 960pt; height: 540pt; overflow: hidden; background: var(--vf-paper); color: var(--vf-ink);
+  font-family: var(--vf-font-serif); font-variant-numeric: lining-nums; }
+.slide .hdr { position: absolute; left: 54pt; right: 54pt; top: 22pt; height: 41pt; display: flex; align-items: center; gap: 9pt;
+  border-bottom: 1pt solid var(--vf-rule-light); }
+.mono { display: block; height: auto; aspect-ratio: __AR__; overflow: visible; }
+.mono .v { fill: currentColor; } .mono .f { fill: var(--vf-gold-deep); }
+.hdr .mono { width: 34pt; color: var(--vf-ink); }
+.hdr .name { font: 400 15pt/1 var(--vf-font-mark); letter-spacing: -.01em; }
+.hdr .name em { font-style: normal; color: var(--vf-gold-deep); }
+.slide .body { position: absolute; left: 54pt; right: 54pt; top: 84pt; bottom: 54pt; display: flex; flex-direction: column; }
+.slide .ftr { position: absolute; left: 54pt; right: 54pt; bottom: 22pt; display: flex; justify-content: space-between;
+  font: 400 var(--vf-p-small)/1 var(--vf-font-serif); color: var(--vf-ink-3); }
+.slide .ftr .src { font-style: italic; }
+
+/* =================== Type roles (pt = Google Slides pt) =================== */
+.t-cover   { font-size: var(--vf-p-cover); font-weight: 400; line-height: 1; letter-spacing: -.02em; }
+.t-section { font-size: var(--vf-p-section); font-weight: 400; line-height: 1.08; letter-spacing: -.015em; text-wrap: balance; }
+.t-title   { font-size: var(--vf-p-title); font-weight: 400; line-height: 1.1; letter-spacing: -.01em; }
+.t-lead    { font-size: var(--vf-p-lead); font-weight: 600; line-height: 1.2; color: var(--vf-ink); }
+.t-body    { font-size: var(--vf-p-body); line-height: 1.3; color: var(--vf-ink-2); }
+.t-small   { font-size: var(--vf-p-small); line-height: 1.3; color: var(--vf-ink-3); }
+.t-label   { font-size: var(--vf-p-label); font-style: italic; line-height: 1.2; color: var(--vf-ink-3); }
+.t-role    { font-size: var(--vf-p-small); color: var(--vf-red); }
+.cta { display: flex; align-items: center; gap: 12pt; font-style: italic; font-size: var(--vf-p-lead); color: var(--vf-red); }
+.cta::before { content: ""; width: 28pt; height: 1.5pt; background: currentColor; flex: none; }
+.slot { background: var(--vf-paper-2); display: grid; place-items: center; text-align: center; font: italic 400 var(--vf-p-small)/1.3 var(--vf-font-serif); color: var(--vf-ink-3); }
+
+/* =================== S1 Cover =================== */
+.s-cover .body { top: 54pt; }
+.s-cover .l { margin-top: auto; display: flex; flex-direction: column; gap: 20pt; max-width: 520pt; }
+.s-cover .big { position: absolute; right: 54pt; top: 54pt; width: 330pt; color: var(--vf-ink); }
+/* =================== S3 Point grid =================== */
+.grid2 { margin-top: 34pt; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30pt 48pt; }
+.grid2 > div { display: flex; flex-direction: column; gap: 8pt; padding-top: 14pt; border-top: 1pt solid var(--vf-rule-light); }
+/* =================== S7 Roster =================== */
+.roster { margin-top: 28pt; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22pt 26pt; }
+.roster .ph { aspect-ratio: 3 / 4; }
+.roster .nm { margin-top: 9pt; font-size: 15pt; font-weight: 600; line-height: 1.2; }
+.roster .rl { margin-top: 2pt; }
+.roster .mt { margin-top: 2pt; font-size: 11pt; color: var(--vf-ink-3); }
+/* =================== S4 Statement / question =================== */
+.s-statement .body { justify-content: center; gap: 40pt; }
+.prompts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24pt; padding-top: 16pt; border-top: 1pt solid var(--vf-rule-light); }
+/* =================== S8 Partner =================== */
+.partner { margin: auto 0; display: grid; grid-template-columns: 260pt minmax(0, 1fr); gap: 48pt; align-items: start; }
+.partner .logo { height: 200pt; }
+.partner .pts { display: flex; flex-direction: column; gap: 26pt; }
+.partner .pts > div { display: flex; flex-direction: column; gap: 8pt; }
+/* =================== S10 CTA =================== */
+.cta-slide { margin-top: 34pt; display: grid; grid-template-columns: minmax(0, 1fr) 216pt; gap: 60pt; align-items: start; }
+.cta-slide .steps { display: flex; flex-direction: column; gap: 26pt; }
+.cta-slide .steps > div { display: flex; flex-direction: column; gap: 8pt; }
+.cta-slide .qr { width: 216pt; height: 216pt; border: 1pt solid var(--vf-rule-light); }
+.cta-slide .url { margin-top: 10pt; text-align: center; font-size: var(--vf-p-small); color: var(--vf-ink-2); }
+</style>
+</head>
+<body>
+
+<!-- ============ S1 · COVER ============ -->
+<div class="board-label">S1 · Cover. Title, one-line description, date and place</div>
+<section class="slide s-cover">
+  <div class="body">
+    <div class="l">
+      <div class="t-label">Vertex Fund · University of Maryland</div>
+      <h1 class="t-cover">Interest Meeting</h1>
+      <p class="t-body" style="max-width: 26em">A student-run investment fund at the University of Maryland.</p>
+      <div class="t-small" style="margin-top: 18pt">Wednesday, November 18, 2026 · Stamp Student Union, Margaret Brent A</div>
+    </div>
+    <svg class="mono big" viewBox="__VB__" aria-hidden="true"><path class="v" d="__V__"/><path class="f" d="__F__"/></svg>
+  </div>
+</section>
+
+<!-- ============ S3 · POINT GRID ============ -->
+<div class="board-label">S3 · Point grid. The workhorse: title plus 2×2 bold lead-in and short body</div>
+<section class="slide">
+  <div class="hdr"><svg class="mono" viewBox="__VB__" aria-hidden="true"><path class="v" d="__V__"/><path class="f" d="__F__"/></svg><div class="name">Vertex <em>Fund</em></div></div>
+  <div class="body">
+    <h2 class="t-title">Spring Analyst Cohort</h2>
+    <div class="grid2">
+      <div><div class="t-lead">Analyst sectors</div><p class="t-body">Work with a team in a sector to study companies and industries.</p></div>
+      <div><div class="t-lead">Investment theses</div><p class="t-body">Develop theses on equities, backed with evidence and research.</p></div>
+      <div><div class="t-lead">Stock pitches</div><p class="t-body">Present positioning recommendations and respond to questions.</p></div>
+      <div><div class="t-lead">Portfolio decisions</div><p class="t-body">Take part in the fund’s portfolio management decisions.</p></div>
+    </div>
+    <div class="cta" style="margin-top: auto">Applications open early in the spring</div>
+  </div>
+  <div class="ftr"><span></span><span>3</span></div>
+</section>
+
+<!-- ============ S7 · ROSTER ============ -->
+<div class="board-label">S7 · Roster. Same crop and edit for every portrait; ≤10 people per slide</div>
+<section class="slide">
+  <div class="hdr"><svg class="mono" viewBox="__VB__" aria-hidden="true"><path class="v" d="__V__"/><path class="f" d="__F__"/></svg><div class="name">Vertex <em>Fund</em></div></div>
+  <div class="body">
+    <h2 class="t-title">Our Team</h2>
+    <div class="roster">
+      <div><div class="slot ph">Portrait</div><div class="nm">Boubacar Dime</div><div class="t-role rl">President</div><div class="mt">Computer Science and Economics · ’28</div></div>
+      <div><div class="slot ph">Portrait</div><div class="nm">Boden Lee</div><div class="t-role rl">Executive</div><div class="mt">Finance · ’29</div></div>
+      <div><div class="slot ph">Portrait</div><div class="nm">Aariz Ashfaq</div><div class="t-role rl">Executive</div><div class="mt">Accounting and Finance · ’29</div></div>
+      <div><div class="slot ph">Portrait</div><div class="nm">[Name]</div><div class="t-role rl">[Role]</div><div class="mt">[Major · year]</div></div>
+      <div><div class="slot ph">Portrait</div><div class="nm">[Name]</div><div class="t-role rl">[Role]</div><div class="mt">[Major · year]</div></div>
+    </div>
+  </div>
+  <div class="ftr"><span></span><span>4</span></div>
+</section>
+
+<!-- ============ S4 · STATEMENT / QUESTION ============ -->
+<div class="board-label">S4 · Statement or question. One sentence, optional prompts underneath</div>
+<section class="slide s-statement">
+  <div class="hdr"><svg class="mono" viewBox="__VB__" aria-hidden="true"><path class="v" d="__V__"/><path class="f" d="__F__"/></svg><div class="name">Vertex <em>Fund</em></div></div>
+  <div class="body">
+    <h2 class="t-section" style="max-width: 15em">“What is something you enjoy that you consider heavily underrated?”</h2>
+    <div class="prompts">
+      <p class="t-body">Why don’t people like it?</p>
+      <p class="t-body">Why do you like it?</p>
+      <p class="t-body">Will people realize this in the future?</p>
+      <p class="t-body">Is this objective? Are you biased?</p>
+    </div>
+  </div>
+  <div class="ftr"><span></span><span>11</span></div>
+</section>
+
+<!-- ============ S8 · PARTNER ============ -->
+<div class="board-label">S8 · Partner. Their logo in its own colors, two lead-in points</div>
+<section class="slide">
+  <div class="hdr"><svg class="mono" viewBox="__VB__" aria-hidden="true"><path class="v" d="__V__"/><path class="f" d="__F__"/></svg><div class="name">Vertex <em>Fund</em></div></div>
+  <div class="body">
+    <h2 class="t-title">Corporate partnership</h2>
+    <div class="partner">
+      <div class="slot logo">Brown Advisory logo</div>
+      <div class="pts">
+        <div><div class="t-lead">Event sponsorship</div><p class="t-body">Brown Advisory directly funds Vertex Fund’s public events. [Confirm details]</p></div>
+        <div><div class="t-lead">Industry connections and mentorship</div><p class="t-body">Members get access to professionals at Brown Advisory. [Confirm details]</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="ftr"><span></span><span>5</span></div>
+</section>
+
+<!-- ============ S10 · CTA / CLOSE ============ -->
+<div class="board-label">S10 · Call to action. Steps on the left, one QR code at ≥1.5in</div>
+<section class="slide">
+  <div class="hdr"><svg class="mono" viewBox="__VB__" aria-hidden="true"><path class="v" d="__V__"/><path class="f" d="__F__"/></svg><div class="name">Vertex <em>Fund</em></div></div>
+  <div class="body">
+    <h2 class="t-title">Stay connected</h2>
+    <div class="cta-slide">
+      <div class="steps">
+        <div><div class="t-lead">Join the GroupMe</div><p class="t-body">All announcements, events and application dates go here first.</p></div>
+        <div><div class="t-lead">Fill out the interest form</div><p class="t-body">Let us know you want to join the spring cohort.</p></div>
+      </div>
+      <div><div class="slot qr">QR code</div><div class="url">vertexumd.com</div></div>
+    </div>
+  </div>
+  <div class="ftr"><span></span><span>13</span></div>
+</section>
+
+</body>
+</html>

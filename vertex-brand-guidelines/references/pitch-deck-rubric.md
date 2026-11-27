@@ -36,20 +36,22 @@ All three fonts are available via *Fonts → More fonts*.
 - Never put gold-deep or stone text below 24pt.
 - Replace every `#000000`, `#1A1A1A`, `#434343`, `#4B5563` and `#888888` with tokens.
 
-## 2. Slide archetypes (the only layouts a deck needs)
+## 2. Slide archetypes
 
-| # | Archetype | Structure | Existing example |
-|---|---|---|---|
-| S1 | **Cover** | Ink or paper. Lockup large, title 60pt, subtitle 20pt in `--fg-2`, date and presenters as an italic label | Event deck slide 1 |
-| S2 | **Section divider** | Ink. Italic label "02 · Valuation" in gold, title 48pt | — |
-| S3 | **Lead-in grid** | Title, then a 2×2 or 1×4 grid of {lead-in 20pt / body 17pt}. ≤25 words per body | "Why did we create Vertex Fund?" |
-| S4 | **Statement / question** | One sentence at 48pt, optional 13pt sub-prompts in a row underneath | "What is something you enjoy…" |
-| S5 | **Chart + takeaway** | Action title (the conclusion as a sentence), chart on the left ~60%, 2–3 lead-in notes on the right, source line | — |
-| S6 | **Stat strip** | Title, 3–4 stats (48pt Garamond) with 13pt captions, optional chart below | "Some numbers, projections, goals" |
-| S7 | **Roster** | Title, a grid of 4:3 portraits (same crop, same edit), name 15pt 600, role 13pt red, major and year 11pt `#6E685F` | "Our Team" |
-| S8 | **Partner** | Partner logo (actual colors allowed inside the logo only), 2 lead-in pairs, optional speaker headshot | "Corporate Partnership" |
-| S9 | **Table** | Comps or financials. Mono numbers right-aligned, hairline rows, header row in italic sentence case, no fills except a paper-2 highlight on the subject company | — |
-| S10 | **CTA / close** | QR code (black on paper, ≥1.5in), one instruction line, the URL beneath it | "Stay Connected" |
+**Approved** layouts come from decks we've presented and are rendered in `templates/deck-master.html`; copy them. **Draft** layouts have no approved reference yet: build them carefully, run Visual QA twice, and tell the user the slide uses a draft layout.
+
+| # | Status | Archetype | Structure | Existing example |
+|---|---|---|---|---|
+| S1 | Approved | **Cover** | Paper. Monogram large at top-right, title 60pt anchored bottom-left, one-line description 17pt, date and place 13pt | Event deck slide 1 |
+| S2 | Draft | **Section divider** | Ink. Italic label "02 · Valuation" in gold, title 48pt | — |
+| S3 | Approved | **Point grid** | Title, then a 2×2 grid of {lead-in 20pt / body 17pt}, each cell topped by a hairline, optional red CTA line at the bottom. ≤25 words per body | "Why did we create Vertex Fund?" |
+| S4 | Approved | **Statement / question** | One sentence at 48pt, optional 13pt sub-prompts in a row underneath | "What is something you enjoy…" |
+| S5 | Draft | **Chart + takeaway** | Action title (the conclusion as a sentence), chart on the left ~60%, 2–3 lead-in notes on the right, source line | — |
+| S6 | Draft | **Stat strip** | Title, 3–4 stats (48pt Garamond) with 13pt captions, optional chart below | "Some numbers, projections, goals" |
+| S7 | Approved | **Roster** | Title, a grid of 5 per row 3:4 portraits (same crop, same edit), name 15pt 600, role 13pt red, major and year 11pt `#6E685F` | "Our Team" |
+| S8 | Approved | **Partner** | Partner logo (actual colors allowed inside the logo only), 2 lead-in pairs, optional speaker headshot | "Corporate Partnership" |
+| S9 | Draft | **Table** | Comps or financials. Mono numbers right-aligned, hairline rows, header row in italic sentence case, no fills except a paper-2 highlight on the subject company | — |
+| S10 | Approved | **CTA / close** | 1–2 lead-in steps on the left, QR code (black on paper, 216pt = 3in) on the right with the URL beneath it | "Stay Connected" |
 
 ## 3. Equity pitch structure (stock pitches to the fund)
 

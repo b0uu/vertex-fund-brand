@@ -85,7 +85,7 @@ So the Vertex look only reads as *ours* when the content is specific: real photo
 3. **Subtract pass.** For each element, ask "if I delete this, does the reader lose information?" If not, delete it. Do this before showing anything.
 4. **Name-swap test.** Replace "Vertex Fund" with another club's name. If the design still works perfectly, it's generic. Add the specific thing: our photo, our room, our numbers.
 5. **Squint test.** Blur your eyes. You should see one dominant element (headline or photo), one secondary element (details), and nothing else competing.
-6. **Render and look** at actual size (and at phone-thumbnail size for posts) before calling it done. Code that "should" look right isn't checked.
+6. **Render and look:** run Visual QA (`SKILL.md` › Visual QA, `scripts/render_check.py`) and inspect every page by eye at full and thumbnail size before calling it done.
 7. **Variation comes from content, not chrome.** When making options, vary the primitive, the mode, the photo and the crop. Don't vary by adding new fonts, colors or effects.
 
 ## 5. Quick fixes for the most common drifts
