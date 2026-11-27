@@ -27,7 +27,7 @@ The mark is **V*f***: an upright STIX Two Text **V** (Medium) and an italic STIX
 | `vf-monogram-on-light.svg` | Ink V, gold-deep *f*, on paper backgrounds |
 | `vf-monogram-on-dark.svg` | Paper V, gold *f*, on ink backgrounds |
 | `vf-monogram-mono-ink.svg` / `-mono-paper.svg` | One-color print; over photos |
-| `vf-lockup-*.svg` | Same four variants with the name |
+| `vf-lockup-*.svg` | Same four variants with the name. `-caps` = capitalized subline; `-short` = no subline, for small sizes |
 | `vf-avatar-ink-1080.svg` / `-paper-1080.svg` | Profile pictures (Instagram, LinkedIn, GroupMe, TerpLink) |
 
 All files are **outlined vectors** generated from the font files, so they look identical on every computer. Never retype the logo in a font.

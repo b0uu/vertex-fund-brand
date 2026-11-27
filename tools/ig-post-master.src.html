@@ -41,9 +41,9 @@ body { background: #DDD8CF; padding: 64px; display: flex; flex-direction: column
 .photo-cover::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 300px; background: linear-gradient(to bottom, rgba(20,18,14,.6), rgba(20,18,14,0)); z-index: 1; }
 .photo-cover::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 128px; background: linear-gradient(to bottom, rgba(20,18,14,0), var(--vf-ink) 94%); }
 /* Inline masthead: monogram + name on one line, no subline (used over photos) */
-.masthead.inline .mono { width: 84px; } .masthead.inline .name { font-size: 64px; }
+.masthead.inline .mono { width: 96px; } .masthead.inline .name { font-size: 64px; }
 /* Watermark: monogram bleeding off the top-right */
-.watermark { position: absolute; right: -60px; top: 80px; width: 600px; opacity: .16; z-index: 0; color: var(--fg); --gold-fg: var(--fg); }
+.watermark { position: absolute; right: -96px; top: 56px; width: 680px; opacity: .16; z-index: 0; color: var(--fg); --gold-fg: var(--fg); }
 /* Frames */
 .frame-gilt::before, .frame-hair::before { content: ""; position: absolute; inset: 32px; pointer-events: none; z-index: 3; }
 .frame-gilt::before { border: 1.5px solid var(--vf-frame-gold); }
@@ -54,12 +54,12 @@ body { background: #DDD8CF; padding: 64px; display: flex; flex-direction: column
 .mono { display: block; height: auto; aspect-ratio: __AR__; overflow: visible; }
 .mono .v { fill: currentColor; } .mono .f { fill: var(--gold-fg); }
 .masthead { display: flex; align-items: center; gap: 22px; }
-.masthead .mono { width: 92px; color: var(--fg); }
+.masthead .mono { width: 104px; color: var(--fg); }
 .masthead .name { font: 400 40px/1 var(--vf-font-mark); letter-spacing: -.01em; color: var(--fg); }
 .masthead .name em { font-style: normal; color: var(--gold-fg); }
 .masthead .sub { margin-top: 8px; font: 400 20px/1 var(--vf-font-mark); letter-spacing: .01em; color: var(--fg-3); }
 .masthead.center { flex-direction: column; text-align: center; gap: 0; }
-.masthead.center .mono { width: 120px; }
+.masthead.center .mono { width: 136px; }
 .masthead.wordmark-xl .name { font-size: 84px; }
 .masthead.wordmark-xl .sub { font-size: 28px; margin-top: 12px; color: var(--fg); }
 

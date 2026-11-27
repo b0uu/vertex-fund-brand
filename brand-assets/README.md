@@ -13,7 +13,11 @@ These files are generated from the master files by `tools/export_assets.py`. Don
 | One-color print, light background | `monogram/vf-monogram-mono-ink` | `lockup/vf-lockup-mono-ink` |
 | One-color print or over photos, dark background | `monogram/vf-monogram-mono-paper` | `lockup/vf-lockup-mono-paper` |
 
-Every lockup also has a `-caps` version that sets "UNIVERSITY OF MARYLAND" in widely spaced capitals. That subline is the only place capitals are allowed; sentence case is the default.
+Every lockup also comes in two extra versions:
+- **`-caps`** sets "UNIVERSITY OF MARYLAND" in widely spaced capitals. That subline is the only place capitals are allowed; sentence case is the default.
+- **`-short`** is the mark plus "Vertex Fund" with no subline. Use it at small sizes (LinkedIn covers, email signatures, slide headers), where the subline would be unreadable.
+
+All logo files have built-in breathing room, so nothing touches the edge. Still leave clear space around them.
 
 Each logo comes in three versions:
 - **.svg:** vector; sharp at any size. Use it for print, the web, Figma and Canva.
@@ -28,6 +32,8 @@ Each logo comes in three versions:
 |---|---|
 | `profile-avatar-ink-400.png` / `-1080.png` | Instagram, LinkedIn, GroupMe, TerpLink profile picture (default) |
 | `profile-avatar-paper-*.png` | Light alternative |
+| `profile-avatar-transparent-light-mark-*.png` | Transparent background; light V and gold *f*. Place it on dark photos or colors |
+| `profile-avatar-transparent-dark-mark-*.png` | Transparent background; ink V and gold *f*. Place it on light backgrounds |
 | `linkedin-banner-1584x396.png` | LinkedIn personal profile banner (the logo sits right so the profile photo doesn't cover it) |
 | `linkedin-company-cover-1128x191.png` | LinkedIn company page cover |
 | `link-preview-1200x630.png` | Link preview image (website meta tags, event pages) |
@@ -35,7 +41,9 @@ Each logo comes in three versions:
 <img src="social/linkedin-banner-1584x396.png" width="640" alt="LinkedIn banner">
 
 ## Favicon — `favicon/`
-`favicon.svg` plus `favicon-32.png`, `apple-touch-icon-180.png` and `icon-512.png` for websites.
+`favicon.svg` plus `favicon-32.png`, `apple-touch-icon-180.png` and `icon-512.png` (dark square) for websites.
+
+Transparent versions: `-transparent-dark-mark` for light browser themes and `-transparent-light-mark` for dark ones. Apple touch icons ignore transparency, so only the solid one is provided.
 
 ## Colors — `colors/`
 `palette.png` is a swatch sheet; `palette.txt` lists hex and RGB values to copy and paste.

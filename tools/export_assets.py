@@ -31,9 +31,10 @@ def place(name, x, y, w):
 
 
 def canvas(w, h, bg, body, frame=None):
+    bgr = f'<rect width="{w}" height="{h}" fill="{bg}"/>' if bg else ''
     fr = f'<rect x="{frame}" y="{frame}" width="{w - 2 * frame}" height="{h - 2 * frame}" fill="none" stroke="{FRAME}" stroke-width="2"/>' if frame else ''
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="Vertex Fund">'
-            f'<title>Vertex Fund</title><rect width="{w}" height="{h}" fill="{bg}"/>{fr}{body}</svg>\n')
+            f'<title>Vertex Fund</title>{bgr}{fr}{body}</svg>\n')
 
 
 def write(path, text):
@@ -79,8 +80,9 @@ def main():
 
     # ---- social ----
     S = os.path.join(OUT, 'social')
-    for mode, bg, logo in (('ink', INK, 'vf-monogram-on-dark.svg'), ('paper', PAPER, 'vf-monogram-on-light.svg')):
-        W = 1080; vb, _ = svg_parts(logo); mw = W * 0.5; mh = mw * vb[3] / vb[2]
+    for mode, bg, logo in (('ink', INK, 'vf-monogram-on-dark.svg'), ('paper', PAPER, 'vf-monogram-on-light.svg'),
+                           ('transparent-light-mark', None, 'vf-monogram-on-dark.svg'), ('transparent-dark-mark', None, 'vf-monogram-on-light.svg')):
+        W = 1080; vb, _ = svg_parts(logo); mw = W * 0.56; mh = mw * vb[3] / vb[2]   # vb includes padding
         m, _ = place(logo, (W - mw) / 2, (W - mh) / 2, mw)
         write(os.path.join(S, f'profile-avatar-{mode}.svg'), canvas(W, W, bg, m))
         for px in (400, 1080):
@@ -89,7 +91,7 @@ def main():
     l, h = place('vf-lockup-on-dark.svg', 0, 0, 640); l, _ = place('vf-lockup-on-dark.svg', 1584 - 96 - 640, (396 - h) / 2, 640)
     write(os.path.join(S, 'linkedin-banner-1584x396.svg'), canvas(1584, 396, INK, l, frame=40))
     # LinkedIn company page cover: logo overlaps the left ~300px → lockup right-aligned
-    l, h = place('vf-lockup-on-dark.svg', 0, 0, 380); l, _ = place('vf-lockup-on-dark.svg', 1128 - 64 - 380, (191 - h) / 2, 380)
+    l, h = place('vf-lockup-on-dark-short.svg', 0, 0, 400); l, _ = place('vf-lockup-on-dark-short.svg', 1128 - 72 - 400, (191 - h) / 2, 400)
     write(os.path.join(S, 'linkedin-company-cover-1128x191.svg'), canvas(1128, 191, INK, l))
     # Link preview (Open Graph): centered lockup
     l, h = place('vf-lockup-on-dark.svg', 0, 0, 760); l, _ = place('vf-lockup-on-dark.svg', (1200 - 760) / 2, (630 - h) / 2, 760)
@@ -98,11 +100,15 @@ def main():
         jobs.append((os.path.join(S, n + '.svg'), os.path.join(S, n + '.png'), w, h))
 
     # ---- favicon ----
-    F = os.path.join(OUT, 'favicon'); vb, _ = svg_parts('vf-monogram-on-dark.svg'); mw = 64 * 0.78; mh = mw * vb[3] / vb[2]
-    m, _ = place('vf-monogram-on-dark.svg', (64 - mw) / 2, (64 - mh) / 2, mw)
-    write(os.path.join(F, 'favicon.svg'), canvas(64, 64, INK, m))
-    for px, n in ((32, 'favicon-32.png'), (180, 'apple-touch-icon-180.png'), (512, 'icon-512.png')):
-        jobs.append((os.path.join(F, 'favicon.svg'), os.path.join(F, n), px, px))
+    F = os.path.join(OUT, 'favicon')
+    for suffix, bg, logo, share in (('', INK, 'vf-monogram-on-dark.svg', 0.74), ('-transparent-dark-mark', None, 'vf-monogram-on-light.svg', 0.92),
+                                    ('-transparent-light-mark', None, 'vf-monogram-on-dark.svg', 0.92)):
+        vb, _ = svg_parts(logo); mw = 64 * share; mh = mw * vb[3] / vb[2]
+        m, _ = place(logo, (64 - mw) / 2, (64 - mh) / 2, mw)
+        write(os.path.join(F, f'favicon{suffix}.svg'), canvas(64, 64, bg, m))
+        for px, n in ((32, 'favicon-32'), (180, 'apple-touch-icon-180'), (512, 'icon-512')):
+            if suffix and n.startswith('apple'): continue   # iOS ignores transparency; keep the solid one
+            jobs.append((os.path.join(F, f'favicon{suffix}.svg'), os.path.join(F, f'{n}{suffix}.png'), px, px))
 
     render(jobs)
 

@@ -81,7 +81,7 @@ Editorial, quiet, and confident, like a well-set financial broadsheet. Warm pape
 - Max two texture modules per piece (frame, photo band, watermark).
 
 ## Logo rules
-- Files: `assets/logo/vf-monogram-{on-light|on-dark|mono-ink|mono-paper}.svg`, `vf-lockup-…svg` (mark + "Vertex Fund" + "University of Maryland"; `-caps` variants set it in tracked capitals), `vf-avatar-{ink|paper}-1080.svg`. All outlined — use them, never retype in a font.
+- Files: `assets/logo/vf-monogram-{on-light|on-dark|mono-ink|mono-paper}.svg`, `vf-lockup-…svg` (mark + "Vertex Fund" + "University of Maryland"; `-caps` variants set it in tracked capitals; `-short` variants drop the subline for small sizes), `vf-avatar-{ink|paper}-1080.svg`. All outlined — use them, never retype in a font.
 - On light: ink V + `--vf-gold-deep` *f*. On dark: paper V + `--vf-gold` *f*. Mono versions for one-color printing or over photos.
 - Clear space ≥ 25% of the monogram's height on all sides. Minimum monogram width 24px / 0.25in.
 - Placement: top-left at the margin (default), centered above a headline (formal/roster), or as a watermark. Never center-bottom, never rotated, never outlined, recolored, stretched, or given effects.

@@ -33,31 +33,46 @@ fd,_=run(ita,'f',xe,0,S,-0.04)
 # bounds of combo
 b1=bounds(med,'V',S); gsI=ita.getGlyphSet(); bp=BoundsPen(gsI); gsI[ita.getBestCmap()[ord('f')]].draw(bp); fb=bp.bounds; s=S/upm
 minx=min(b1[0],xe+fb[0]*s); maxx=max(b1[1],xe+fb[2]*s); miny=min(b1[2],fb[1]*s); maxy=max(b1[3],fb[3]*s)
-pad=0
-vb=(minx-pad,-maxy-pad,maxx-minx+2*pad,maxy-miny+2*pad)
+mh=maxy-miny
+PAD=0.06*mh   # breathing room inside every logo file so nothing touches the edge
+vb=(minx-PAD,-maxy-PAD,maxx-minx+2*PAD,mh+2*PAD)
 print('monogram viewBox',[round(v,2) for v in vb])
 def svg(vb,body,title='Vertex Fund'):
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb[0]:.2f} {vb[1]:.2f} {vb[2]:.2f} {vb[3]:.2f}" role="img" aria-label="{title}"><title>{title}</title>{body}</svg>\n'
 COL={'on-light':('#14120E','#A98018'),'on-dark':('#FAFAF8','#D6A72A'),'mono-ink':('#14120E','#14120E'),'mono-paper':('#FAFAF8','#FAFAF8')}
 for k,(cv,cf) in COL.items():
     open(f'{OUT}/vf-monogram-{k}.svg','w').write(svg(vb,f'<path fill="{cv}" d="{vd}"/><path fill="{cf}" d="{fd}"/>','Vertex Fund monogram'))
-# horizontal lockup: monogram height H; name "Vertex Fund" STIX regular; sub "UNIVERSITY OF MARYLAND" tracked
-mh=maxy-miny
-gap=0.30*S
-nx=maxx+gap
-nsize=S*0.42
-name1,xe1=run(reg,'Vertex ',nx,-mh*0.40+0,nsize,-0.01)
-name2,xe2=run(reg,'Fund',xe1,-mh*0.40,nsize,-0.01)
-# Two sublines: sentence case (default) and tracked capitals (the one allowed all-caps exception)
-SUBS={'': ('University of Maryland', S*0.155, 0.01, 1.75), '-caps': ('UNIVERSITY OF MARYLAND', S*0.115, 0.2, 2.2)}
-for suffix,(text,ssize,trk,lead) in SUBS.items():
-    sub,xe3=run(reg,text,nx+1,-mh*0.40+ssize*lead,ssize,trk)
-    right=max(xe2,xe3-trk*ssize)
-    lvb=(minx,-maxy,right-minx,maxy-miny)
+
+def rb(font,text,x0,y0,size,track):
+    """bounds of a set run in SVG coords: (minx,maxx,top,bottom)"""
+    a,b,c,d=bounds(font,text,size,track); return x0+a, x0+b, y0-d, y0-c
+# --- horizontal lockup, balanced on the optical centre of the V ---
+Vc=-(b1[2]+b1[3])/2            # vertical centre of the V (SVG y, baseline = 0)
+gap=0.30*S; nx=maxx+gap
+nsize=S*0.42; capN=bounds(reg,'V',nsize)[3]
+SUBS={'': ('University of Maryland', S*0.155, 0.01), '-caps': ('UNIVERSITY OF MARYLAND', S*0.115, 0.2)}
+for suffix,(text,ssize,trk) in list(SUBS.items())+[('-short',(None,0,0))]:
+    if text is None:            # name only, centred on the V
+        yn=Vc+capN/2
+    else:
+        capS=bounds(reg,'U',ssize)[3]; lead=0.55*capN   # gap from name baseline to subline cap-top
+        # block = name cap-top .. subline baseline; centre it on Vc
+        # top = yn-capN ; bottom = yn+lead+capS
+        yn=Vc-(lead+capS-capN)/2
+    name1,xe1=run(reg,'Vertex ',nx,yn,nsize,-0.01)
+    name2,xe2=run(reg,'Fund',xe1,yn,nsize,-0.01)
+    boxes=[(minx,maxx,-maxy,-miny), rb(reg,'Vertex Fund',nx,yn,nsize,-0.01)]
+    subp=''
+    if text is not None:
+        ys=yn+lead+capS
+        sub,_=run(reg,text,nx+1,ys,ssize,trk); boxes.append(rb(reg,text,nx+1,ys,ssize,trk))
+    L=min(b[0] for b in boxes); R=max(b[1] for b in boxes); T=min(b[2] for b in boxes); B=max(b[3] for b in boxes)
+    lvb=(L-PAD,T-PAD,R-L+2*PAD,B-T+2*PAD)
     for k,(cv,cf) in COL.items():
         sc = {'on-light':'#6E685F','on-dark':'#8C867E'}.get(k,cv)
-        body=f'<path fill="{cv}" d="{vd}"/><path fill="{cf}" d="{fd}"/><path fill="{cv}" d="{name1}"/><path fill="{cf}" d="{name2}"/><path fill="{sc}" d="{sub}"/>'
-        open(f'{OUT}/vf-lockup-{k}{suffix}.svg','w').write(svg(lvb,body,'Vertex Fund, University of Maryland'))
+        body=f'<path fill="{cv}" d="{vd}"/><path fill="{cf}" d="{fd}"/><path fill="{cv}" d="{name1}"/><path fill="{cf}" d="{name2}"/>'
+        if text is not None: body+=f'<path fill="{sc}" d="{sub}"/>'
+        open(f'{OUT}/vf-lockup-{k}{suffix}.svg','w').write(svg(lvb,body,'Vertex Fund' + ('' if text is None else ', University of Maryland')))
 # avatar (proposed gold f), 1080 square, ink bg, monogram centered occupying ~52% width (inside circle safe zone)
 W=1080; mw=maxx-minx; sc=(W*0.50)/mw; cx=(W-mw*sc)/2 - minx*sc; cy=W/2 + (maxy+miny)/2*sc
 body=f'<rect width="{W}" height="{W}" fill="#14120E"/><g transform="translate({cx:.2f} {cy:.2f}) scale({sc:.4f})"><path fill="#FAFAF8" d="{vd}"/><path fill="#D6A72A" d="{fd}"/></g>'
