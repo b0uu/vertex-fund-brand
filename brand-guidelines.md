@@ -32,6 +32,8 @@ The mark is **V*f***: an upright STIX Two Text **V** (Medium) and an italic STIX
 
 All files are **outlined vectors** generated from the font files, so they look identical on every computer. Never retype the logo in a font.
 
+Ready-to-use PNGs, social images, favicons and photos for the team are in `brand-assets/` at the repo root.
+
 **Rules**
 - Clear space: at least 25% of the monogram's height on all sides.
 - Minimum width: 24px on screen, 0.25in in print.
