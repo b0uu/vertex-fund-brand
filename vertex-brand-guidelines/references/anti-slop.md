@@ -16,7 +16,7 @@ So the Vertex look only reads as *ours* when the content is specific: real photo
 
 ### Type
 - [ ] More than **two type families** on one piece, not counting the logo. No "accent" font added for numbers or quotes. (Past failure: Cormorant Garamond brought in for recap stats.)
-- [ ] Any **all-caps** text, letter-spaced labels, or small caps. Tickers and acronyms excepted.
+- [ ] Any **all-caps** text, letter-spaced labels, or small caps. Excepted: tickers, acronyms, and the lockup subline "UNIVERSITY OF MARYLAND".
 - [ ] **Monospace** used for anything the eye lands on first: headlines, stats, dates, labels, links.
 - [ ] Gradient text, outlined text, or text with shadows or glows.
 
@@ -30,7 +30,7 @@ So the Vertex look only reads as *ours* when the content is specific: real photo
 - [ ] Icons or emoji as decoration, arrows (→) on every link, status dots, colored side-stripes.
 
 ### Surface
-- [ ] Decorative gradients, glows, blurred blobs, glass panels, noise and grain, or drop shadows. The only gradient allowed is the photo-band seam.
+- [ ] Decorative gradients, glows, blurred blobs, glass panels, noise and grain, or drop shadows. The only gradients allowed are the photo seams and the photo-cover top scrim.
 - [ ] More than **two texture modules** (frame, photo band, watermark), or a texture added to "make it more interesting".
 - [ ] Rules (hairlines) that don't separate two different groups of content. **Max two horizontal rules** per social graphic.
 - [ ] Stock imagery, AI-generated images, or illustrations of bulls, charts-going-up, handshakes or skylines.
@@ -70,7 +70,7 @@ So the Vertex look only reads as *ours* when the content is specific: real photo
 - Adjective triads ("rigorous, collaborative, and driven"). Pick the one that's true.
 - Rhetorical-question hooks ("Ready to take the next step?", "The catch?").
 - Summary lines that restate what the graphic already says.
-- More than one em dash per piece of copy. More than one exclamation mark per piece.
+- More than one em dash per piece of copy. More than one exclamation mark per line, or any in a plain factual announcement.
 
 **Instead**
 - **Headline:** the event or the fact, in ≤5 words. "Interest Meeting." "Applications are open." "Thank you for coming."
@@ -96,7 +96,7 @@ So the Vertex look only reads as *ours* when the content is specific: real photo
 | Big stats strip as the main visual | Only when the numbers *are* the news and are sourced. Otherwise lead with a photo or statement |
 | Three equal cards | A list, a single paragraph, or 2 / 4 / 5 items if that's what's true |
 | Everything centered | Left-align; keep center for the formal roster only |
-| Empty top half | Enlarge the headline or add the real photo band, not decoration |
+| Empty top half | Enlarge the headline or add a real event photo (photo cover), not decoration |
 | A new font "for contrast" | Use weight (400 vs 500/600) or italic from EB Garamond |
 | Hairlines everywhere | Keep the one that separates the masthead or a fact row; delete the rest |
 | Clever, abstract headline | The plain event name or fact |

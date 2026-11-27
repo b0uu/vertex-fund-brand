@@ -1,0 +1,13 @@
+Vertex Fund palette (generated from vertex-brand-guidelines/assets/tokens.css)
+
+vf-ink           #14120E  rgb(20, 18, 14)  primary text on light; dark-mode background
+vf-ink-2         #46403A  rgb(70, 64, 58)  secondary text on light — 9.8:1 on paper
+vf-ink-3         #6E685F  rgb(110, 104, 95)  small meta text on light — 5.3:1 on paper
+vf-stone         #8C867E  rgb(140, 134, 126)  large/non-text on light
+vf-paper         #FAFAF8  rgb(250, 250, 248)  light background; primary text on dark — 17.9:1
+vf-paper-2       #F2EFE9  rgb(242, 239, 233)  alternate light surface, print stock, photo mats
+vf-paper-dim     #C9C3B8  rgb(201, 195, 184)  secondary text on dark — 10.7:1 on ink
+vf-gold          #D6A72A  rgb(214, 167, 42)  gold on DARK backgrounds — 8.4:1 on ink
+vf-gold-deep     #A98018  rgb(169, 128, 24)  gold on LIGHT backgrounds — 3.5:1: ≥24px text or graphics only
+vf-red           #B8000F  rgb(184, 0, 15)  red on LIGHT — 6.6:1 on paper
+vf-red-bright    #E8695C  rgb(232, 105, 92)  red on DARK

@@ -1,6 +1,6 @@
 # Vertex Fund: Brand Guidelines
 
-**v1.4 · November 2026** (v1.4: slide master + mandatory visual QA. v1.3: social layouts cut to Statement and Grid. v1.2: anti-slop guardrails. v1.1: no all caps; monospace limited to tables and chart axes)
+**v1.5 · November 2026** (v1.5: approved photo-cover post; caps allowed in the wordmark subline. v1.4: slide master + mandatory visual QA. v1.3: social layouts cut to Statement and Grid. v1.2: anti-slop guardrails. v1.1: no all caps; monospace limited to tables and chart axes)
 Owner: Vertex Fund executive board. Applies to everything public (Instagram, LinkedIn, the website, flyers) and private (decks, pitches, memos, sponsor letters).
 
 > **How this repo fits together**
@@ -27,10 +27,12 @@ The mark is **V*f***: an upright STIX Two Text **V** (Medium) and an italic STIX
 | `vf-monogram-on-light.svg` | Ink V, gold-deep *f*, on paper backgrounds |
 | `vf-monogram-on-dark.svg` | Paper V, gold *f*, on ink backgrounds |
 | `vf-monogram-mono-ink.svg` / `-mono-paper.svg` | One-color print; over photos |
-| `vf-lockup-*.svg` | Same four variants with the name |
+| `vf-lockup-*.svg` | Same four variants with the name. `-caps` = capitalized subline; `-short` = no subline, for small sizes |
 | `vf-avatar-ink-1080.svg` / `-paper-1080.svg` | Profile pictures (Instagram, LinkedIn, GroupMe, TerpLink) |
 
 All files are **outlined vectors** generated from the font files, so they look identical on every computer. Never retype the logo in a font.
+
+Ready-to-use PNGs, social images, favicons and photos for the team are in `brand-assets/` at the repo root.
 
 **Rules**
 - Clear space: at least 25% of the monogram's height on all sides.
@@ -108,7 +110,8 @@ Every hex except Ink 3, Paper dim and Red bright comes straight from vertexumd.c
 All are free Google Fonts and work in Google Slides (*Fonts → More fonts*). Fallbacks: Georgia / Menlo.
 
 **Rules**
-- **No all caps, anywhere.** Not in headlines, eyebrows, labels, buttons, table headers, ratings, or the logo lockup. The only capitals that stay are tickers (NVDA) and real acronyms (UMD, AUM, DCF).
+- **No all caps, with one exception.** Not in headlines, eyebrows, labels, buttons, table headers or ratings. Tickers (NVDA) and real acronyms (UMD, AUM, DCF) keep their capitals.
+- **The one exception: the wordmark subline.** "UNIVERSITY OF MARYLAND" may be set in widely spaced capitals under "Vertex Fund" (logo files ending in `-caps`). Sentence case is the default. Use one or the other in a piece, never both.
 - **Monospace is a supporting voice.** DM Mono appears only inside tables and on chart axes. Big stats, dates, and headline numbers are EB Garamond.
 - **Numbers:** in HTML, Garamond numerals get `lining-nums` so they don't bounce. In Google Slides, if a big stat shows bouncing figures, set just that number in STIX Two Text.
 - **Labels and eyebrows:** EB Garamond italic, sentence case, muted color ("Spring 2027 · Analyst cohort").
@@ -127,14 +130,15 @@ All are free Google Fonts and work in Google Slides (*Fonts → More fonts*). Fa
   - Slides: 54pt
   - Letter pages: 0.75in
 - **Optional textures** (max two per piece):
-  - Gold photo band (dark posts)
+  - Photo cover: a full-colour event photo across the top of a dark post (our approved "Thanks for coming!" post)
+  - Gold photo band: a grayscale photo under a gold wash (dark posts)
   - Faint monogram watermark
   - Gilt frame (light) or hairline frame (dark)
 - **Signature detail:** a short gold dash followed by an italic line.
 - **Photography:**
   - Our own people and rooms.
   - One consistent, light edit per set.
-  - Either untouched color or full grayscale under the gold band; nothing in between.
+  - Either untouched color (photo cover, carousel slides) or full grayscale under the gold band; no filters or partial tints.
   - No stock trading-floor photos.
 
 ## 6. Layouts (composable, not one-off templates)
@@ -171,7 +175,7 @@ Each works in **light or dark**, and in **portrait, square or story** sizes.
   - "Wednesday, November 18 · 6:00 PM".
   - Ranges with en dashes (30–50).
   - '27 with a curly apostrophe.
-- At most one exclamation mark per piece, and no emoji in graphics.
+- Exclamation marks only in warm moments (thank-yous, "Free food!"), at most one per line. No emoji in graphics.
 - Anything about a security, position or return says: *For educational purposes only. Not investment advice.*
 
 ## 9. Guardrails against generic, AI-looking design

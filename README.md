@@ -1,15 +1,19 @@
 # vertex-fund-brand
 
+**Looking for a logo, profile picture, banner, colors or photos?** Go to [`brand-assets/`](brand-assets/).
+
 The single source of truth for Vertex Fund's visual identity (University of Maryland · [vertexumd.com](https://vertexumd.com)).
 
 ```
 vertex-fund-brand/
 ├── README.md
+├── brand-assets/                ← TEAM DOWNLOADS: logos (SVG/PNG), social images, favicons, colors, fonts, photos
 ├── brand-guidelines.md          ← the manual (read this first)
 ├── site-contradictions.md       ← where vertexumd.com disagrees with the system (no site changes made)
 ├── tools/
 │   ├── make_logos.py            ← regenerates outlined logo SVGs from the STIX font files
-│   ├── build_template.py        ← inlines tokens.css + logo paths into the HTML master
+│   ├── build_template.py        ← inlines tokens.css + logo paths into the HTML masters
+│   ├── export_assets.py         ← regenerates brand-assets/ from the master SVGs and tokens
 │   ├── ig-post-master.src.html  ← social template source
 │   └── deck-master.src.html     ← slide template source
 └── vertex-brand-guidelines/     ← the Claude Skill (zip this folder to install)
@@ -37,7 +41,7 @@ vertex-fund-brand/
 
 ## Change something
 1. Edit `vertex-brand-guidelines/assets/tokens.css`.
-2. Run `python3 tools/build_template.py`.
+2. Run `python3 tools/build_template.py` and `python3 tools/export_assets.py --photos ../vertex-fund-website/pictures`.
 3. Update the matching tables in `brand-guidelines.md` and `SKILL.md`.
 4. Bump the version in `brand-guidelines.md`.
 
